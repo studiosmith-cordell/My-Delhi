@@ -1,15 +1,49 @@
+import './home.css'
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 
-    $('[hero_logo_svg]').each(function (index) {
-      let tl = gsap.timeline({});
+addEventListener("DOMContentLoaded", (event) => {
+  //hero logo on home page animation
+  $('[hero_logo_svg]').each(function (index) {
+    let tl = gsap.timeline({});
     tl.startTime(0.8);
     tl.from($(this).find('path'), {autoAlpha:0, yPercent: -100, duration: 0.4, ease: 'power2.out', stagger: {amount: 0.6, from: "edges", ease:'power2.in'}});
   });
-  
+
+  //homepage awards marquee
   $('.awards').each(function (index) {
-      let tl = gsap.timeline({});
+    let tl = gsap.timeline({});
     tl.to($(this).find('.awards__wrp'), {xPercent: -100, duration: 90, repeat: -1, ease: 'none'});
   });
+
+    //homepage food marquee
+    $('.h-food').each(function (index) {
+      let tl = gsap.timeline({});
+      tl.to($(this).find('.h-food__list'), { xPercent: -100, duration: 90, repeat: -1, ease: 'none' });
+      
+      $('.h-food').on("mouseenter", function () {
+        gsap.to(tl, 0.6, {
+          timeScale: 0,
+          ease: "power1.out",
+          onComplete: function () {
+            tl.pause();
+          }
+        });
+      });
   
+      $('.h-food').on("mouseleave", function () {
+        tl.play();
+        gsap.to(tl, 0.6, {
+          timeScale: 1,
+          ease: "power1.in",
+          onComplete: function () {
+            tl.play();
+          }
+        });
+      });
+    });
+
+  //home shop slider
   $('.swiper-component--shop').each(function (index) {
     const swiper = new Swiper($(this).find('.swiper')[0], {
       slidesPerView: 2.5,
@@ -21,8 +55,9 @@
         forceToAxis: true
       }
     });
-      });
-  
+  });
+
+  //home news article slider
   $('.swiper-component--news').each(function (index) {
     const swiper = new Swiper($(this).find('.swiper')[0], {
       slidesPerView: 3,
@@ -38,5 +73,5 @@
         clickable: true
         }
     });
-      });
-  
+  });
+});

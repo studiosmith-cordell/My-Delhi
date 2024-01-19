@@ -1,0 +1,21 @@
+/* global.css */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped,
+.word {
+  overflow: hidden;
+}
+[txt-slide-up] {
+  opacity: 0;
+}
+.word {
+  padding-top: 0.2em;
+  margin-top: -0.2em;
+}

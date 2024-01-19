@@ -1,0 +1,6 @@
+.w-mod-js .hero-logo__svg > path {
+    visibility: hidden;
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: auto!important;
+}
