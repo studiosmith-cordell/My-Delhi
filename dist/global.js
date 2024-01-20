@@ -7730,7 +7730,7 @@
       onEnter: () => tl.play()
     });
   });
-  $("p").each(function(index) {
+  $('p, [gsap="fade"]').each(function(index) {
     let tl = new gsapWithCSS.timeline({ paused: true });
     tl.from($(this), { duration: 1, opacity: 0, ease: "power2.out" });
     ScrollTrigger2.create({

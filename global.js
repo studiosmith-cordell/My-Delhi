@@ -69,7 +69,7 @@ $('[slide-from-right]').each(function (index) {
     });
 });
   
-$('p').each(function (index) {
+$('p, [gsap="fade"]').each(function (index) {
     let tl = new gsap.timeline({paused: true});
     tl.from($(this), {duration: 1, opacity: 0, ease: 'power2.out'});
 
