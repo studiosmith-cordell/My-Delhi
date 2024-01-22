@@ -52,7 +52,6 @@ addEventListener("DOMContentLoaded", (event) => {
       spaceBetween: 20,
       speed: 400,
       grabCursor: true,
-      loop: true,
       mousewheel: {
         forceToAxis: true
       }
