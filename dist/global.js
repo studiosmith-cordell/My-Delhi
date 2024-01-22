@@ -7698,6 +7698,7 @@
       onEnter: () => tl.play()
     });
   });
+  gsapWithCSS.set("[txt-slide-up]", { opacity: 1 });
   $("[slide-from-left]").each(function(index) {
     let tl = new gsapWithCSS.timeline({ paused: true });
     tl.from($(this), { xPercent: -50, duration: 1, opacity: 0, ease: "power2.out" });
@@ -7732,7 +7733,7 @@
   });
   $('p, [gsap="fade"]').each(function(index) {
     let tl = new gsapWithCSS.timeline({ paused: true });
-    tl.from($(this), { duration: 1, opacity: 0, ease: "power2.out" });
+    tl.from($(this), { duration: 1, opacity: 0, ease: "power2.inout" });
     ScrollTrigger2.create({
       trigger: $(this),
       start: "top bottom",
@@ -7742,16 +7743,37 @@
     });
     ScrollTrigger2.create({
       trigger: $(this),
-      start: "top 70%",
+      start: "top 75%",
       onEnter: () => tl.play()
     });
   });
-  gsapWithCSS.set("[txt-slide-up]", { opacity: 1 });
+  $('[gsap="grow"]').each(function(index) {
+    let tl = new gsapWithCSS.timeline({ paused: true });
+    tl.from($(this), { duration: 1, scale: 0.8, opacity: 0, ease: "power2.out" });
+    ScrollTrigger2.create({
+      trigger: $(this),
+      start: "top bottom",
+      onEnter: () => {
+        tl.pause(0);
+      }
+    });
+    ScrollTrigger2.create({
+      trigger: $(this),
+      start: "top 75%",
+      onEnter: () => tl.play()
+    });
+  });
+  var menuTl = new gsapWithCSS.timeline({ paused: true });
+  menuTl.from($(".nav").find(".nav__link, .nav__star"), { yPercent: 110, opacity: 0, duration: 0.6, ease: "back.out(2)", stagger: { amount: 0.4, ease: "power1.in" } });
   $(".menu-btn").on("click", function() {
     if ($(this).attr("aria-expanded") === "false") {
+      setTimeout(function() {
+        menuTl.play();
+      }, 400);
       $(this).attr("aria-expanded", "true");
       $(".nav").attr("aria-hidden", "false");
     } else {
+      menuTl.reverse();
       $(this).attr("aria-expanded", "false");
       $(".nav").attr("aria-hidden", "true");
     }

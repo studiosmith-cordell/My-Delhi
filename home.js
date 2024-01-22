@@ -1,6 +1,8 @@
 import './home.css'
-import Swiper from 'swiper/bundle';
-import 'swiper/css/bundle';
+import Swiper from 'swiper';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 addEventListener("DOMContentLoaded", (event) => {
   //hero logo on home page animation
@@ -60,6 +62,7 @@ addEventListener("DOMContentLoaded", (event) => {
   //home news article slider
   $('.swiper-component--news').each(function (index) {
     const swiper = new Swiper($(this).find('.swiper')[0], {
+      modules: [Pagination],
       slidesPerView: 3,
       slidesPerGroup: 3,
       spaceBetween: 20,

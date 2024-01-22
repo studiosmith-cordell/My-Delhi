@@ -29,8 +29,10 @@ $('[txt-slide-up]').each(function (index) {
       start: 'top 80%',
       onEnter: () => tl.play()
     });
-  });
+});
   
+gsap.set('[txt-slide-up]', { opacity: 1 });
+
   $('[slide-from-left]').each(function (index) {
     let tl = new gsap.timeline({paused: true});
     tl.from($(this), {xPercent: -50, duration: 1, opacity: 0, ease: 'power2.out'});
@@ -71,7 +73,7 @@ $('[slide-from-right]').each(function (index) {
   
 $('p, [gsap="fade"]').each(function (index) {
     let tl = new gsap.timeline({paused: true});
-    tl.from($(this), {duration: 1, opacity: 0, ease: 'power2.out'});
+    tl.from($(this), {duration: 1, opacity: 0, ease: 'power2.inout'});
 
     ScrollTrigger.create({
       trigger: $(this),
@@ -83,21 +85,45 @@ $('p, [gsap="fade"]').each(function (index) {
     
     ScrollTrigger.create({
       trigger: $(this),
-      start: 'top 70%',
+      start: 'top 75%',
       onEnter: () => tl.play()
     });
 });
-  
-gsap.set('[txt-slide-up]', {opacity: 1});
-  
-$('.menu-btn').on('click', function() {
-    if ($(this).attr('aria-expanded') === 'false') {
-        $(this).attr('aria-expanded', 'true');
-      $('.nav').attr('aria-hidden', 'false');
-    } else {
-      $(this).attr('aria-expanded', 'false');
-      $('.nav').attr('aria-hidden', 'true');
+
+$('[gsap="grow"]').each(function (index) {
+  let tl = new gsap.timeline({paused: true});
+  tl.from($(this), {duration: 1, scale: 0.8, opacity: 0, ease: 'power2.out'});
+
+  ScrollTrigger.create({
+    trigger: $(this),
+    start: 'top bottom',
+    onEnter: () => {
+      tl.pause(0);
     }
+  });
+  
+  ScrollTrigger.create({
+    trigger: $(this),
+    start: 'top 75%',
+    onEnter: () => tl.play()
+  });
+});
+  
+let menuTl = new gsap.timeline({paused: true});
+menuTl.from($('.nav').find('.nav__link, .nav__star'), {yPercent: 110, opacity: 0, duration: 0.6, ease: 'back.out(2)', stagger: {amount: 0.4, ease: 'power1.in'}});
+
+$('.menu-btn').on('click', function () {
+  if ($(this).attr('aria-expanded') === 'false') {
+    setTimeout(function () {
+      menuTl.play();
+    }, 400);
+    $(this).attr('aria-expanded', 'true');
+    $('.nav').attr('aria-hidden', 'false');
+  } else {
+    menuTl.reverse();
+    $(this).attr('aria-expanded', 'false');
+    $('.nav').attr('aria-hidden', 'true');
+  }
 });
   
 let lenis;
