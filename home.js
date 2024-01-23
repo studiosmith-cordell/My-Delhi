@@ -1,8 +1,4 @@
 import './home.css'
-import Swiper from 'swiper';
-import { Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
 
 addEventListener("DOMContentLoaded", (event) => {
   //hero logo on home page animation

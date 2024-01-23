@@ -2,6 +2,10 @@ import './global.css'
 import SplitType from 'split-type'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Swiper from 'swiper';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import Lenis from '@studio-freight/lenis'
 
 gsap.registerPlugin(ScrollTrigger);
@@ -109,6 +113,7 @@ $('[gsap="grow"]').each(function (index) {
   });
 });
   
+// Nav menu link animation with menu open and close
 let menuTl = new gsap.timeline({paused: true});
 menuTl.from($('.nav').find('.nav__link, .nav__star'), {yPercent: 110, opacity: 0, duration: 0.6, ease: 'back.out(2)', stagger: {amount: 0.4, ease: 'power1.in'}});
 
@@ -125,38 +130,61 @@ $('.menu-btn').on('click', function () {
     $('.nav').attr('aria-hidden', 'true');
   }
 });
-  
-let lenis;
-  if (Webflow.env("editor") === undefined) {
-    lenis = new Lenis({
-      lerp: 0.12,
-      wheelMultiplier: 1,
-      gestureOrientation: "vertical",
-      normalizeWheel: false,
-      smoothTouch: false,
-      smoothWheel: true
-    });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+// Booking modal swiper
+
+$('.swiper-component--booking').each(function (index) {
+  const swiperBook = new Swiper($(this).find('.swiper')[0], {
+    modules: [Pagination],
+    slidesPerView: 1.25,
+    spaceBetween: 20,
+    centeredSlides: true,
+    loop: true,
+    speed: 400,
+    allowTouchMove: false,
+    pagination: {
+        el: $(this).find('.swiper-bullet-wrapper')[0],
+      type: 'bullets',
+      bulletActiveClass: 'is-active',
+      bulletClass: 'swiper-bullet--yellow',
+      bulletElement: 'button',
+      clickable: true
+      }
+  });
+});
+
+// Smooth scroll
+let lenis;
+if (Webflow.env("editor") === undefined) {
+  lenis = new Lenis({
+    lerp: 0.12,
+    wheelMultiplier: 1,
+    gestureOrientation: "vertical",
+    normalizeWheel: false,
+    smoothTouch: false,
+    smoothWheel: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
     requestAnimationFrame(raf);
   }
+  requestAnimationFrame(raf);
+}
 
-  $("[data-lenis-start]").on("click", function () {
-    lenis.start();
-  });
+$("[data-lenis-start]").on("click", function () {
+  lenis.start();
+});
 
-  $("[data-lenis-stop]").on("click", function () {
+$("[data-lenis-stop]").on("click", function () {
+  lenis.stop();
+});
+
+$("[data-lenis-toggle]").on("click", function () {
+  $(this).toggleClass("stop-scroll");
+  if ($(this).hasClass("stop-scroll")) {
     lenis.stop();
-  });
-
-  $("[data-lenis-toggle]").on("click", function () {
-    $(this).toggleClass("stop-scroll");
-    if ($(this).hasClass("stop-scroll")) {
-      lenis.stop();
-    } else {
-      lenis.start();
-    }
+  } else {
+    lenis.start();
+  }
 });
