@@ -5,19 +5,39 @@ addEventListener("DOMContentLoaded", (event) => {
   $('[hero_logo_svg]').each(function (index) {
     let tl = gsap.timeline({});
     tl.startTime(0.8);
-    tl.from($(this).find('path'), {autoAlpha:0, yPercent: -100, duration: 0.4, ease: 'power2.out', stagger: {amount: 0.6, from: "edges", ease:'power2.in'}});
+    tl.from($(this).find('path'), {
+      autoAlpha: 0,
+      yPercent: -100,
+      duration: 0.4,
+      ease: 'power2.out',
+      stagger: {
+        amount: 0.6,
+        from: "edges",
+        ease: 'power2.in'
+      }
+    });
   });
 
   //homepage awards marquee
   $('.awards').each(function (index) {
     let tl = gsap.timeline({});
-    tl.to($(this).find('.awards__wrp'), {xPercent: -100, duration: 90, repeat: -1, ease: 'none'});
+    tl.to($(this).find('.awards__wrp'), {
+      xPercent: -100,
+      duration: 90,
+      repeat: -1,
+      ease: 'none'
+    });
   });
 
     //homepage food marquee
     $('.h-food').each(function (index) {
       let tl = gsap.timeline({});
-      tl.to($(this).find('.h-food__list'), { xPercent: -100, duration: 90, repeat: -1, ease: 'none' });
+      tl.to($(this).find('.h-food__list'), {
+        xPercent: -100,
+        duration: 90,
+        repeat: -1,
+        ease: 'none'
+      });
       
       $('.h-food').on("mouseenter", function () {
         gsap.to(tl, 0.6, {

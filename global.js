@@ -18,53 +18,77 @@ let typeSplit = new SplitType('[text-split]', {
   
 $('[txt-slide-up]').each(function (index) {
     let tl = new gsap.timeline({paused: true});
-    tl.from($(this).find('.char'), {yPercent: 110, duration: 0.6, ease: 'back.out(2)', stagger: {amount: 0.4, ease: 'power1.in'}});
-    tl.from($(this).find('.hindi'), {opacity: 0, duration: 1, ease: 'power2.inout'},'-=0.3');
+  tl.from($(this).find('.char'), {
+    yPercent: 110,
+    duration: 0.6,
+    ease: 'back.out(2)',
+    stagger: {
+      amount: 0.4,
+      ease: 'power1.in'
+    }
+  });
+  tl.from($(this).find('.hindi'), {
+    opacity: 0,
+    duration: 1,
+    ease: 'power2.inout'
+  }, '-=0.3');
 
-    ScrollTrigger.create({
-      trigger: $(this),
-      start: 'top bottom',
-      onEnter: () => {
-        tl.pause(0);
-      }
-    });
-    
-    ScrollTrigger.create({
-      trigger: $(this),
-      start: 'top 80%',
-      onEnter: () => tl.play()
-    });
+  ScrollTrigger.create({
+    trigger: $(this),
+    start: 'top bottom',
+    onLeaveBack: () => {
+      tl.pause(0);
+    }
+  });
+  
+  ScrollTrigger.create({
+    trigger: $(this),
+    start: 'top 80%',
+    onEnter: () => tl.play()
+  });
 });
   
 gsap.set('[txt-slide-up]', { opacity: 1 });
 
-  $('[slide-from-left]').each(function (index) {
-    let tl = new gsap.timeline({paused: true});
-    tl.from($(this), {xPercent: -50, duration: 1, opacity: 0, ease: 'power2.out'});
+$('[slide-from-left]').each(function (index) {
+  let tl = new gsap.timeline({paused: true});
+  tl.from($(this), {
+    xPercent: -50,
+    duration: 1,
+    opacity: 0,
+    ease: 'power2.out'
+  });
 
-    ScrollTrigger.create({
-      trigger: $(this),
-      start: 'top bottom',
-      onEnter: () => {
-        tl.pause(0);
-      }
-    });
-    
-    ScrollTrigger.create({
-      trigger: $(this),
-      start: 'top 60%',
-      onEnter: () => tl.play()
-    });
+  ScrollTrigger.create({
+    trigger: $(this),
+    start: 'top bottom',
+    onLeaveBack: () => {
+      tl.pause(0);
+    }
+  });
+  
+  ScrollTrigger.create({
+    trigger: $(this),
+    start: 'top 60%',
+    onEnter: () => tl.play()
+  });
 });
   
 $('[slide-from-right]').each(function (index) {
-    let tl = new gsap.timeline({paused: true});
-    tl.from($(this), {xPercent: 50, duration: 1, opacity: 0, ease: 'power2.out'});
+  let tl = new gsap.timeline({
+    paused: true
+  });
+  tl.from($(this), {
+    xPercent: 50,
+    duration: 1,
+    opacity: 0,
+    ease: 'power2.out'
+  });
 
     ScrollTrigger.create({
       trigger: $(this),
       start: 'top bottom',
-      onEnter: () => {
+      onLeaveBack: () => {
         tl.pause(0);
       }
     });
@@ -78,12 +102,16 @@ $('[slide-from-right]').each(function (index) {
   
 $('[gsap="fade"]').each(function (index) {
     let tl = new gsap.timeline({paused: true});
-    tl.from($(this), {duration: 1, opacity: 0, ease: 'power2.inout'});
+  tl.from($(this), {
+    duration: 1,
+    opacity: 0,
+    ease: 'power2.inout'
+  });
 
     ScrollTrigger.create({
       trigger: $(this),
       start: 'top bottom',
-      onEnter: () => {
+      onLeaveBack: () => {
         tl.pause(0);
       }
     });
@@ -97,12 +125,17 @@ $('[gsap="fade"]').each(function (index) {
 
 $('[gsap="grow"]').each(function (index) {
   let tl = new gsap.timeline({paused: true});
-  tl.from($(this), {duration: 1, scale: 0.8, opacity: 0, ease: 'power2.out'});
+  tl.from($(this), {
+    duration: 1,
+    scale: 0.8,
+    opacity: 0,
+    ease: 'power2.out'
+  });
 
   ScrollTrigger.create({
     trigger: $(this),
     start: 'top bottom',
-    onEnter: () => {
+    onLeaveBack: () => {
       tl.pause(0);
     }
   });

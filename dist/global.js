@@ -12550,12 +12550,24 @@
   });
   $("[txt-slide-up]").each(function(index) {
     let tl = new gsapWithCSS.timeline({ paused: true });
-    tl.from($(this).find(".char"), { yPercent: 110, duration: 0.6, ease: "back.out(2)", stagger: { amount: 0.4, ease: "power1.in" } });
-    tl.from($(this).find(".hindi"), { opacity: 0, duration: 1, ease: "power2.inout" }, "-=0.3");
+    tl.from($(this).find(".char"), {
+      yPercent: 110,
+      duration: 0.6,
+      ease: "back.out(2)",
+      stagger: {
+        amount: 0.4,
+        ease: "power1.in"
+      }
+    });
+    tl.from($(this).find(".hindi"), {
+      opacity: 0,
+      duration: 1,
+      ease: "power2.inout"
+    }, "-=0.3");
     ScrollTrigger2.create({
       trigger: $(this),
       start: "top bottom",
-      onEnter: () => {
+      onLeaveBack: () => {
         tl.pause(0);
       }
     });
@@ -12568,11 +12580,16 @@
   gsapWithCSS.set("[txt-slide-up]", { opacity: 1 });
   $("[slide-from-left]").each(function(index) {
     let tl = new gsapWithCSS.timeline({ paused: true });
-    tl.from($(this), { xPercent: -50, duration: 1, opacity: 0, ease: "power2.out" });
+    tl.from($(this), {
+      xPercent: -50,
+      duration: 1,
+      opacity: 0,
+      ease: "power2.out"
+    });
     ScrollTrigger2.create({
       trigger: $(this),
       start: "top bottom",
-      onEnter: () => {
+      onLeaveBack: () => {
         tl.pause(0);
       }
     });
@@ -12583,12 +12600,19 @@
     });
   });
   $("[slide-from-right]").each(function(index) {
-    let tl = new gsapWithCSS.timeline({ paused: true });
-    tl.from($(this), { xPercent: 50, duration: 1, opacity: 0, ease: "power2.out" });
+    let tl = new gsapWithCSS.timeline({
+      paused: true
+    });
+    tl.from($(this), {
+      xPercent: 50,
+      duration: 1,
+      opacity: 0,
+      ease: "power2.out"
+    });
     ScrollTrigger2.create({
       trigger: $(this),
       start: "top bottom",
-      onEnter: () => {
+      onLeaveBack: () => {
         tl.pause(0);
       }
     });
@@ -12600,11 +12624,15 @@
   });
   $('[gsap="fade"]').each(function(index) {
     let tl = new gsapWithCSS.timeline({ paused: true });
-    tl.from($(this), { duration: 1, opacity: 0, ease: "power2.inout" });
+    tl.from($(this), {
+      duration: 1,
+      opacity: 0,
+      ease: "power2.inout"
+    });
     ScrollTrigger2.create({
       trigger: $(this),
       start: "top bottom",
-      onEnter: () => {
+      onLeaveBack: () => {
         tl.pause(0);
       }
     });
@@ -12616,11 +12644,16 @@
   });
   $('[gsap="grow"]').each(function(index) {
     let tl = new gsapWithCSS.timeline({ paused: true });
-    tl.from($(this), { duration: 1, scale: 0.8, opacity: 0, ease: "power2.out" });
+    tl.from($(this), {
+      duration: 1,
+      scale: 0.8,
+      opacity: 0,
+      ease: "power2.out"
+    });
     ScrollTrigger2.create({
       trigger: $(this),
       start: "top bottom",
-      onEnter: () => {
+      onLeaveBack: () => {
         tl.pause(0);
       }
     });
