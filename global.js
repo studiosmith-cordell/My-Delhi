@@ -3,8 +3,9 @@ import SplitType from 'split-type'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Swiper from 'swiper';
-import { Pagination } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Lenis from '@studio-freight/lenis'
 
@@ -75,7 +76,7 @@ $('[slide-from-right]').each(function (index) {
     });
 });
   
-$('p, [gsap="fade"]').each(function (index) {
+$('[gsap="fade"]').each(function (index) {
     let tl = new gsap.timeline({paused: true});
     tl.from($(this), {duration: 1, opacity: 0, ease: 'power2.inout'});
 
@@ -132,24 +133,29 @@ $('.menu-btn').on('click', function () {
 });
 
 // Booking modal swiper
-
 $('.swiper-component--booking').each(function (index) {
   const swiperBook = new Swiper($(this).find('.swiper')[0], {
-    modules: [Pagination],
+    modules: [Navigation, Pagination],
     slidesPerView: 1.25,
     spaceBetween: 20,
     centeredSlides: true,
     loop: true,
     speed: 400,
-    allowTouchMove: false,
+    mousewheel: {
+      forceToAxis: true
+    },
     pagination: {
-        el: $(this).find('.swiper-bullet-wrapper')[0],
+      el: $(this).find('.swiper-bullet-wrapper')[0],
       type: 'bullets',
       bulletActiveClass: 'is-active',
       bulletClass: 'swiper-bullet--yellow',
       bulletElement: 'button',
       clickable: true
-      }
+    },
+    navigation: {
+      nextEl: $(this).find(".swiper-next")[0],
+      prevEl: $(this).find(".swiper-prev")[0]
+    }
   });
 });
 

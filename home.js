@@ -44,10 +44,10 @@ addEventListener("DOMContentLoaded", (event) => {
   //home shop slider
   $('.swiper-component--shop').each(function (index) {
     const swiper = new Swiper($(this).find('.swiper')[0], {
+      modules: [Navigation],
       slidesPerView: 2.5,
       spaceBetween: 20,
       speed: 400,
-      grabCursor: true,
       mousewheel: {
         forceToAxis: true
       }
@@ -57,11 +57,14 @@ addEventListener("DOMContentLoaded", (event) => {
   //home news article slider
   $('.swiper-component--news').each(function (index) {
     const swiper = new Swiper($(this).find('.swiper')[0], {
-      modules: [Pagination],
+      modules: [Navigation, Pagination],
       slidesPerView: 3,
       slidesPerGroup: 3,
       spaceBetween: 20,
       speed: 400,
+      mousewheel: {
+        forceToAxis: true
+      },
       pagination: {
           el: $(this).find('.swiper-bullet-wrapper')[0],
         type: 'bullets',
@@ -69,7 +72,12 @@ addEventListener("DOMContentLoaded", (event) => {
         bulletClass: 'swiper-bullet',
         bulletElement: 'button',
         clickable: true
-        }
+      },
+      navigation: {
+        nextEl: $(this).find(".swiper-next")[0],
+        prevEl: $(this).find(".swiper-prev")[0]
+      }
     });
   });
+  
 });
