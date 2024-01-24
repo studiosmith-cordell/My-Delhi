@@ -100,4 +100,13 @@ addEventListener("DOMContentLoaded", (event) => {
     });
   });
   
+  
+  // Load Spline Viewer
+  addEventListener('DOMContentLoaded', (event) => {
+  setTimeout(() => {
+		var splineScript = document.createElement('script');
+    splineScript.src = 'https://cdn.jsdelivr.net/npm/@splinetool/viewer@1.0.33/build/spline-viewer.min.js';  
+    document.head.appendChild(splineScript)
+	});
+  }, 100);
 });
