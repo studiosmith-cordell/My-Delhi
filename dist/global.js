@@ -1,4 +1,4 @@
-
+(() => {
   // node_modules/split-type/dist/index.js
   (function() {
     function append() {
@@ -12733,7 +12733,7 @@
       lenis.start();
     }
   });
-
+})();
 /*! Bundled license information:
 
 gsap/gsap-core.js:
