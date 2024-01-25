@@ -56,6 +56,7 @@ a {
     --font-size--large: var(--font-size--large-mobile);
     --font-size--hindi: var(--font-size--hindi-mobile);
     --heading--h3: var(--heading--h3-mobile);
+    --heading--h4: var(--heading--h4-mobile);
   }
 }
 
