@@ -4,7 +4,21 @@
     font-kerning: normal;
 }
 
-.news-slide {
+body {
+  --font-size--body: clamp(16px, 1.25vw, 24px);
+  --heading--h1: clamp(3.815em, -0.0268em + 6.2027vw, 5.5556em);
+  --heading--h2: clamp(3.0519em, 1.2048em + 2.9822vw, 3.8888em);
+  --heading--h3: clamp(1.9531em, 0.7461em + 1.9488vw, 2.5em);
+  --font-size--large: clamp(1.5631em, 1.3341em + 0.3697vw, 1.6669em);
+  --font-size--hindi: clamp(1.9531em, 0.1336em + 2.9376vw, 2.7775em);
+  --heading--h1-tablet: clamp(2.4881em, 1.2468em + 4.1465vw, 3.815em);
+  --heading--h2-tablet: clamp(2.0738em, 1.1587em + 3.0566vw, 3.0519em);
+  --heading--h3-tablet: clamp(1.7281em, 1.5176em + 0.7031vw, 1.9531em);
+  --font-size--large-tablet: clamp(1.44em, 1.3248em + 0.3848vw, 1.5631em);
+  --font-size--hindi-tablet: var(var(--heading--h3-tablet));
+}
+
+.news-slide, .hindi, [balance] {
   text-wrap: balance;
 }
 
