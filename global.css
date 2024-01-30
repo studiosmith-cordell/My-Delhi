@@ -27,7 +27,6 @@ body {
     --heading--h1: clamp(2.0269em, 0.354em + 5.5879vw, 3.815em);
     --heading--h2: clamp(1.8019em, 0.6324em + 3.9063vw, 3.0519em);
     --heading--h3: clamp(1.4238em, 0.9285em + 1.6543vw, 1.9531em);
-    --font-size--small: var(--font-size--small-tablet);
     --font-size--large: clamp(1.2em, 0.9755em + 0.75vw, 1.44em);
     --font-size--hindi: clamp(1.4238em, 0.9285em + 1.6543vw, 1.9531em);
   }
@@ -38,7 +37,6 @@ body {
     --page-padding--main: var(--page-padding--mobile);
     --heading--h1: var(--heading--h1-mobile);
     --heading--h2: var(--heading--h2-mobile);
-    --font-size--small: var(--font-size--small-mobile);
     --font-size--large: var(--font-size--large-mobile);
     --font-size--hindi: var(--font-size--hindi-mobile);
     --heading--h3: var(--heading--h3-mobile);
@@ -81,7 +79,7 @@ a {
     flex-wrap: wrap!important;
 }
 
-.swiper-button-disabled:hover {
+.swiper-button-disabled, .swiper-button-disabled:hover {
   opacity: 0
 }
 
@@ -213,6 +211,8 @@ html.lenis {
     .cookie__consent {
       max-width: calc(100vw - (var(--page-padding--mobile) * 2));
     }
+
+    [clip-shape="modal"] {clip-path: url(#frame-6);}
 }
 
 @media only screen and (min-width: 1920px) {

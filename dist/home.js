@@ -59,15 +59,18 @@
         slidesPerView: 1.2,
         spaceBetween: 20,
         speed: 400,
+        centeredSlides: true,
         mousewheel: {
           forceToAxis: true
         },
         breakpoints: {
           480: {
-            slidesPerView: 1.5
+            slidesPerView: 1.5,
+            centeredSlides: false
           },
           768: {
-            slidesPerView: 2.5
+            slidesPerView: 2.5,
+            centeredSlides: false
           }
         },
         navigation: {
