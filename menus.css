@@ -1,0 +1,30 @@
+.menu__nav__link.w--current {
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 0.225em;
+}
+
+.menu__item__h > h3{
+  font-size: inherit;
+  margin: 0em;
+}
+
+.is-medium::after {
+  content: " ";
+  margin-left: 0.25em;
+  display: inline-block;
+  width: 0.619611111111111em;
+  height: 0.833333333333333em;
+  background-image: url('https://uploads-ssl.webflow.com/6549128db41d15ae06784cbc/65b93ef7edc6226950389079_chilli.svg');
+  background-size: 100%;
+}
+
+.is-spicy::after {
+  content: " ";
+  margin-left: 0.25em;
+  display: inline-block;
+  width: 1.239222222222222em;
+  height: 0.833333333333333em;
+  background-image: url('https://uploads-ssl.webflow.com/6549128db41d15ae06784cbc/65b93ef7edc6226950389079_chilli.svg');
+  background-repeat: repeat-x;
+  background-size: 0.619611111111111em 0.833333333333333em;
+}
