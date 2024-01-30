@@ -228,3 +228,10 @@ $("[data-lenis-toggle]").on("click", function () {
     lenis.start();
   }
 });
+
+$("[mobile-reservations]").on("click", function () {
+  $("[aria-label='menu']").trigger('click');
+  setTimeout(() => {
+    lenis.stop();
+  }, 50);
+});
