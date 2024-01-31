@@ -1,11 +1,23 @@
 .menu__nav__link.w--current {
-  text-decoration-thickness: 0.125em;
-  text-underline-offset: 0.225em;
+  text-decoration-thickness: 0.115em;
+  text-underline-offset: 0.275em;
+}
+
+.menu__nav__link.w--current > .a__line-wrp {
+  display: none;
 }
 
 .menu__item__h > h3{
   font-size: inherit;
   margin: 0em;
+}
+
+[featured="true"] {
+  padding: 1.5em 10px;
+  margin: -1.5em -10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--primary--black);
 }
 
 .is-medium::after {

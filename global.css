@@ -101,7 +101,7 @@ a {
   pointer-events: none;
 }
 
-.section--orange-circles-btm::before {
+.section--orange-circles-top::before {
   content: '';
   position: absolute;
   z-index: 1;
@@ -169,6 +169,13 @@ a {
   background-size: 50px;
   background-position: -25px 50%;
   pointer-events: none;
+}
+
+.my-delhi-bg {
+  background-image: url("https://uploads-ssl.webflow.com/6549128db41d15ae06784cbc/65ba22c38601d5eadb407f53_my-delhi-logo-yellow.svg"), url("https://uploads-ssl.webflow.com/6549128db41d15ae06784cbc/65ba22c38601d5eadb407f53_my-delhi-logo-yellow.svg");
+  background-repeat: repeat, repeat;
+  background-size: 200px 160px, 200px 160px;
+  background-position: -100px -80px, 0px 0px;
 }
 
 .cart__container {position: relative;}
