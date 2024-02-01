@@ -29,37 +29,37 @@ addEventListener("DOMContentLoaded", (event) => {
     });
   });
 
-    //homepage food marquee
-    $('.h-food').each(function (index) {
-      let tl = gsap.timeline({});
-      tl.to($(this).find('.h-food__list'), {
-        xPercent: -100,
-        duration: 90,
-        repeat: -1,
-        ease: 'none'
-      });
-      
-      $('.h-food').on("mouseenter", function () {
-        gsap.to(tl, 0.6, {
-          timeScale: 0,
-          ease: "power1.out",
-          onComplete: function () {
-            tl.pause();
-          }
-        });
-      });
-  
-      $('.h-food').on("mouseleave", function () {
-        tl.play();
-        gsap.to(tl, 0.6, {
-          timeScale: 1,
-          ease: "power1.in",
-          onComplete: function () {
-            tl.play();
-          }
-        });
+  // food marquee
+  $('.h-food').each(function (index) {
+    let tl = gsap.timeline({});
+    tl.to($(this).find('.h-food__list'), {
+      xPercent: -100,
+      duration: 90,
+      repeat: -1,
+      ease: 'none'
+    });
+    
+    $('.h-food').on("mouseenter", function () {
+      gsap.to(tl, 0.6, {
+        timeScale: 0,
+        ease: "power1.out",
+        onComplete: function () {
+          tl.pause();
+        }
       });
     });
+
+    $('.h-food').on("mouseleave", function () {
+      tl.play();
+      gsap.to(tl, 0.6, {
+        timeScale: 1,
+        ease: "power1.in",
+        onComplete: function () {
+          tl.play();
+        }
+      });
+    });
+  });
 
   //home shop slider
   $('.swiper-component--shop').each(function (index) {

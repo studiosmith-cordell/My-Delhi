@@ -18,7 +18,7 @@ let typeSplit = new SplitType('[text-split]', {
 });
   
 $('[txt-slide-up]').each(function (index) {
-    let tl = new gsap.timeline({paused: true});
+  let tl = new gsap.timeline({paused: true});
   tl.from($(this).find('.char'), {
     yPercent: 110,
     duration: 0.6,
@@ -191,6 +191,14 @@ $('.swiper-component--booking').each(function (index) {
       prevEl: $(this).find(".swiper-prev")[0]
     }
   });
+});
+
+//FAQ accordion auto close
+$('.faq__trigger').on('click', function() {
+  if (!$(this).hasClass('is--open')) {
+    $('.faq__trigger.is--open').click();
+  }
+  $(this).toggleClass('is--open');
 });
 
 // Smooth scroll

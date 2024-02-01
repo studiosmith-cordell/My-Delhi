@@ -143,6 +143,34 @@ a {
   pointer-events: none;
 }
 
+.section--green-circles-btm::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  height: 100px; 
+  background: radial-gradient(circle, var(--secondary--green) 55%, transparent 45%); 
+  background-size: 50px;
+  background-position: -25px 50%;
+  pointer-events: none;
+}
+
+.section--blue-circles-btm::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  height: 100px; 
+  background: radial-gradient(circle, var(--secondary--blue) 55%, transparent 45%); 
+  background-size: 50px;
+  background-position: -25px 50%;
+  pointer-events: none;
+}
+
 .section--cream-circles-btm::after {
   content: '';
   position: absolute;
@@ -192,6 +220,10 @@ a {
   background-position: 0% 25px;
   background-repeat: repeat-y;
   pointer-events: none;
+}
+
+.faq:last-child {
+  border-bottom: solid 2px var(--primary--black);
 }
 
 html.lenis {

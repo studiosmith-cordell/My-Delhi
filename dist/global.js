@@ -12703,6 +12703,12 @@
       }
     });
   });
+  $(".faq__trigger").on("click", function() {
+    if (!$(this).hasClass("is--open")) {
+      $(".faq__trigger.is--open").click();
+    }
+    $(this).toggleClass("is--open");
+  });
   var lenis;
   if (Webflow.env("editor") === void 0) {
     let raf = function(time) {
