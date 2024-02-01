@@ -39,6 +39,11 @@ addEventListener("DOMContentLoaded", (event) => {
     }, {
       'clip-path': clipPaths.end
     });
+    tl.fromTo($(this).find('[gsap="video"]'), {
+      scale: 0.7
+    }, {
+      scale: 1
+    },0);
   });
 
   // food marquee
