@@ -523,6 +523,127 @@ html.lenis {
   }
 }
 
+/* home.css */
+.about-hero__mask {
+  clip-path: polygon(15% 50%, 50% 20%, 85% 50%, 50% 80%);
+}
+@media only screen and (min-width: 992px) {
+  .section.section--above-header:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50px;
+    background:
+      linear-gradient(
+        135deg,
+        var(--primary--black) 25%,
+        transparent 25%),
+      linear-gradient(
+        225deg,
+        var(--primary--orange) 25%,
+        transparent 25%),
+      linear-gradient(
+        315deg,
+        var(--primary--orange) 25%,
+        transparent 25%),
+      linear-gradient(
+        45deg,
+        var(--primary--black) 25%,
+        transparent 25%);
+    background-size: 50px 50px;
+    background-position: 0px 0%;
+    background-color: var(--primary--yellow);
+  }
+  .section.section--above-header:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50px;
+    background:
+      linear-gradient(
+        135deg,
+        var(--primary--orange) 25%,
+        transparent 25%),
+      linear-gradient(
+        225deg,
+        var(--primary--black) 25%,
+        transparent 25%),
+      linear-gradient(
+        315deg,
+        var(--primary--black) 25%,
+        transparent 25%),
+      linear-gradient(
+        45deg,
+        var(--primary--orange) 25%,
+        transparent 25%);
+    background-size: 50px 50px;
+    background-position: 0px 0%;
+    background-color: var(--primary--yellow);
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 991px) {
+  .section.section--above-header:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 25px;
+    background:
+      linear-gradient(
+        135deg,
+        var(--primary--black) 25%,
+        transparent 25%),
+      linear-gradient(
+        225deg,
+        var(--primary--orange) 25%,
+        transparent 25%),
+      linear-gradient(
+        315deg,
+        var(--primary--orange) 25%,
+        transparent 25%),
+      linear-gradient(
+        45deg,
+        var(--primary--black) 25%,
+        transparent 25%);
+    background-size: 25px 25px;
+    background-position: 0px 0%;
+    background-color: var(--primary--yellow);
+  }
+  .section.section--above-header:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 24px;
+    background:
+      linear-gradient(
+        135deg,
+        var(--primary--orange) 25%,
+        transparent 25%),
+      linear-gradient(
+        225deg,
+        var(--primary--black) 25%,
+        transparent 25%),
+      linear-gradient(
+        315deg,
+        var(--primary--black) 25%,
+        transparent 25%),
+      linear-gradient(
+        45deg,
+        var(--primary--orange) 25%,
+        transparent 25%);
+    background-size: 24px 24px;
+    background-position: 0px 0%;
+    background-color: var(--primary--yellow);
+  }
+}
+
 /* node_modules/swiper/swiper.css */
 @font-face {
   font-family: "swiper-icons";

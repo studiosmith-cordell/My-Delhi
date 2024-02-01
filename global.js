@@ -1,5 +1,6 @@
 import './global.css'
 import './grid.css'
+import './home.css'
 import SplitType from 'split-type'
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

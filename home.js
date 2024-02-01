@@ -1,5 +1,3 @@
-import './home.css'
-
 addEventListener("DOMContentLoaded", (event) => {
   //hero logo on home page animation
   $('[hero_logo_svg]').each(function (index) {
