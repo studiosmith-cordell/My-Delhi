@@ -47,6 +47,10 @@ p {
 a {
   color: currentColor;
 }
+button {
+  background-color: transparent;
+  padding: 0em;
+}
 .a__line {
   background-color: currentColor;
 }

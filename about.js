@@ -43,7 +43,7 @@ addEventListener("DOMContentLoaded", (event) => {
       scale: 0.7
     }, {
       scale: 1
-    },0);
+    }, 0);
   });
 
   // food marquee

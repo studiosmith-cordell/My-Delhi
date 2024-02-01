@@ -6,12 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-home": "esbuild home.js --bundle --outfile=dist/home.js",
-    "build-global": "esbuild global.js --bundle --outfile=dist/global.js"
+    "build-global": "esbuild global.js --bundle --outfile=dist/global.js",
+    "build-menus": "esbuild menus.js --bundle --outfile=dist/menus.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@finsweet/attributes-cmsfilter": "^1.16.2",
     "@splinetool/runtime": "^1.0.33",
     "@studio-freight/lenis": "^1.0.33",
     "gsap": "^3.12.5",
