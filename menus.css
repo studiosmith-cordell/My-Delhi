@@ -44,3 +44,7 @@ h1[text-split] {
   background-repeat: repeat-x;
   background-size: 0.619611111111111em 0.833333333333333em;
 }
+
+.filter__btn--active {
+  text-decoration: underline;
+}
