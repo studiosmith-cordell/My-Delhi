@@ -243,6 +243,9 @@ html.lenis {
 .lenis.lenis-stopped, .word {
     overflow: hidden;
 }
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
 
 [text-split] {
   padding-bottom: 0.2em;
