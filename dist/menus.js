@@ -783,11 +783,14 @@
     let filter = '[data-filter-checkbox="' + button + '"]';
     if (button === "Vegetarian") {
       let vegetarian = $('[data-filter-checkbox="Vegetarian"]').is(":checked");
-      let vegan = $('[data-filter-checkbox="Vegan"]').is(":checked");
       if (vegetarian) {
         $('[data-filter-checkbox="Vegan"]')[0].checked = false;
         $('[data-filter-button="Vegan"]').removeClass("filter__btn--active");
       }
+    }
+    ;
+    if (button === "Vegan") {
+      let vegan = $('[data-filter-checkbox="Vegan"]').is(":checked");
       if (vegan) {
         $('[data-filter-checkbox="Vegetarian"]')[0].checked = false;
         $('[data-filter-button="Vegetarian"]').removeClass("filter__btn--active");
