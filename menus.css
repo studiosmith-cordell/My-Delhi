@@ -51,10 +51,3 @@ h1[text-split] {
   text-underline-offset: 0.275em;
   text-decoration-color: var(--primary--orange);
 }
-@media (pointer: fine) {
-  .filter__btn:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 0.125em;
-    text-underline-offset: 0.275em;
-  }
-}
