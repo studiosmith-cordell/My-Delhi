@@ -801,13 +801,21 @@
     let checked = $(this).is(":checked");
     let checkbox = $(this).attr("data-filter-checkbox");
     let button = '[data-filter-button="' + checkbox + '"]';
+    let filterCount = $("[data-filter-checkbox]:checked").length;
+    if (filterCount > 0) {
+      $("[data-filter-count]").css("display", "block");
+      $("[data-filter-count]").text(filterCount);
+    } else {
+      $("[data-filter-count]").css("display", "none");
+      $("[data-filter-count]").text(filterCount);
+    }
+    ;
     if (checked) {
       $(button).addClass("filter__btn--active");
-      console.log(checkbox + "active");
     } else if (!checked) {
       $(button).removeClass("filter__btn--active");
-      console.log(checkbox + "inactive");
     }
+    ;
   });
   $('[fs-cmsfilter-element="clear"]').on("click", function() {
     $("[data-filter-button]").removeClass("filter__btn--active");
