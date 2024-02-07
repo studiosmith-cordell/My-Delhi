@@ -816,7 +816,7 @@
       $(button).removeClass("filter__btn--active");
     }
     ;
-    sessionStorage.setItem(checkbox, checked);
+    localStorage.setItem(checkbox, checked);
   });
   $('[fs-cmsfilter-element="clear"]').on("click", function() {
     $("[data-filter-button]").removeClass("filter__btn--active");

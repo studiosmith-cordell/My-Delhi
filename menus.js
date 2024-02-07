@@ -57,7 +57,7 @@ $('[data-filter-checkbox]').on('change', function () {
   } else if (!checked) {
     $(button).removeClass('filter__btn--active');
   };
-  sessionStorage.setItem(checkbox, checked);
+  localStorage.setItem(checkbox, checked);
 });
 
 $('[fs-cmsfilter-element="clear"]').on('click', function () {
