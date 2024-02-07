@@ -1,10 +1,14 @@
-.menu__nav__link.w--current {
+.menu__nav__link, .menu__nav__link:hover, .menu__nav__link.w--current {
   text-decoration-thickness: 0.125em;
   text-underline-offset: 0.275em;
 }
 
-.menu__nav__link.w--current > .a__line-wrp {
-  display: none;
+.menu__nav__link {
+  text-decoration-color: transparent;
+}
+
+.menu__nav__link:hover {
+  text-decoration-color: var(--primary--black)
 }
 
 .menu__item__h > h3{
@@ -50,4 +54,10 @@ h1[text-split] {
   text-decoration-thickness: 0.125em;
   text-underline-offset: 0.275em;
   text-decoration-color: var(--primary--orange);
+}
+
+@media only screen and (max-width: 479px) {
+  .filter__btn--active {
+    text-decoration-thickness: 4px;
+  }
 }
