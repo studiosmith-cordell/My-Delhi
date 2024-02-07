@@ -11,7 +11,7 @@
   text-decoration-color: var(--primary--black);
 }
 
-.menu__nav__link.menu__nav__link.w--current {
+.menu__nav__link.w--current {
   text-decoration-color: var(--primary--black);
 }
 
