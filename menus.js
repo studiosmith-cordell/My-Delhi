@@ -57,8 +57,17 @@ $('[data-filter-checkbox]').on('change', function () {
   } else if (!checked) {
     $(button).removeClass('filter__btn--active');
   };
+  sessionStorage.setItem(checkbox, checked);
 });
 
 $('[fs-cmsfilter-element="clear"]').on('click', function () {
   $('[data-filter-button]').removeClass('filter__btn--active');
+});
+
+
+Object.entries(window.sessionStorage).forEach(([key, val]) => {
+  filter = '[data-filter-checkbox="' + key + '"]'
+  if (val === 'true') {
+    $(filter).trigger('click');
+  };
 });

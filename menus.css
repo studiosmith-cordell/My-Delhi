@@ -1,6 +1,8 @@
 .menu__nav__link:hover, .menu__nav__link.w--current {
+  text-decoration: underline;
   text-decoration-thickness: 0.125em;
   text-underline-offset: 0.275em;
+  text-decoration-style: solid;
 }
 
 .menu__item__h > h3{
