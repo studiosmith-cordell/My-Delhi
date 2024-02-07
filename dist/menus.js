@@ -821,7 +821,7 @@
   $('[fs-cmsfilter-element="clear"]').on("click", function() {
     $("[data-filter-button]").removeClass("filter__btn--active");
   });
-  Object.entries(window.sessionStorage).forEach(([key, val]) => {
+  Object.entries(window.localStorage).forEach(([key, val]) => {
     filter = '[data-filter-checkbox="' + key + '"]';
     if (val === "true") {
       $(filter).trigger("click");
