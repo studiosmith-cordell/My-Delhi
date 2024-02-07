@@ -1,18 +1,6 @@
-.menu__nav__link, .menu__nav__link:hover, .menu__nav__link.w--current {
+.menu__nav__link:hover, .menu__nav__link.w--current {
   text-decoration-thickness: 0.125em;
   text-underline-offset: 0.275em;
-}
-
-.menu__nav__link {
-  text-decoration-color: transparent;
-}
-
-.menu__nav__link:hover {
-  text-decoration-color: var(--primary--black);
-}
-
-.menu__nav__link.w--current {
-  text-decoration-color: var(--primary--black);
 }
 
 .menu__item__h > h3{
