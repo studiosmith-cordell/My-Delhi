@@ -98,6 +98,23 @@ button {
 .swiper-button-disabled:hover {
   opacity: 0;
 }
+.section--cream-40-circles-top::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -50px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background:
+    radial-gradient(
+      circle,
+      var(--secondary--cream-40) 55%,
+      transparent 45%);
+  background-size: 50px;
+  background-position: -25px 50%;
+  pointer-events: none;
+}
 .section--cream-40-circles-btm::after {
   content: "";
   position: absolute;
@@ -275,6 +292,9 @@ html.lenis {
 .lenis.lenis-stopped,
 .word {
   overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 [text-split] {
   padding-bottom: 0.2em;
