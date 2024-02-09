@@ -132,6 +132,23 @@ button {
   background-position: -25px 50%;
   pointer-events: none;
 }
+.section--cream-80-circles-btm::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background:
+    radial-gradient(
+      circle,
+      var(--secondary--cream-80) 55%,
+      transparent 45%);
+  background-size: 50px;
+  background-position: -25px 50%;
+  pointer-events: none;
+}
 .section--orange-circles-top::before {
   content: "";
   position: absolute;
