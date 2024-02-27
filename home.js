@@ -30,9 +30,9 @@ addEventListener("DOMContentLoaded", (event) => {
   // food marquee
   $('.h-food').each(function (index) {
     let tl = gsap.timeline({});
-    tl.to($(this).find('.h-food__list'), {
+    tl.to($(this), {
       xPercent: -100,
-      duration: 90,
+      duration: 120,
       repeat: -1,
       ease: 'none'
     });
