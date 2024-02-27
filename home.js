@@ -32,7 +32,7 @@ addEventListener("DOMContentLoaded", (event) => {
     let tl = gsap.timeline({});
     tl.to($(this), {
       xPercent: -100,
-      duration: 120,
+      duration: 180,
       repeat: -1,
       ease: 'none'
     });
