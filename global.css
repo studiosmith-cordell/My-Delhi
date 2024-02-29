@@ -4,6 +4,8 @@
     font-kerning: normal;
 }
 
+::selection{background-color: var(--primary--yellow);}
+
 body {
   --page-padding--negative: calc(var(--page-padding--main) * -1);
   --font-size--body: clamp(16px, 1.25vw, 24px);
