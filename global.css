@@ -4,7 +4,10 @@
     font-kerning: normal;
 }
 
-::selection{background-color: var(--primary--yellow);}
+::selection{
+  background-color: var(--primary--yellow);
+  color: var(--primary--black);
+}
 
 body {
   --page-padding--negative: calc(var(--page-padding--main) * -1);
