@@ -787,14 +787,12 @@
         $('[data-filter-checkbox="Vegan"]').trigger("click");
       }
     }
-    ;
     if (button === "Vegan") {
       let vegetarian = $('[data-filter-checkbox="Vegetarian"]').is(":checked");
       if (vegetarian) {
         $('[data-filter-checkbox="Vegetarian"]').trigger("click");
       }
     }
-    ;
     $(filter2).trigger("click");
   });
   $("[data-filter-checkbox]").on("change", function() {
@@ -809,13 +807,11 @@
       $("[data-filter-count]").css("display", "none");
       $("[data-filter-count]").text(filterCount);
     }
-    ;
     if (checked) {
       $(button).addClass("filter__btn--active");
     } else if (!checked) {
       $(button).removeClass("filter__btn--active");
     }
-    ;
     localStorage.setItem(checkbox, checked);
   });
   $('[fs-cmsfilter-element="clear"]').on("click", function() {
@@ -826,6 +822,5 @@
     if (val === "true") {
       $(filter).trigger("click");
     }
-    ;
   });
 })();

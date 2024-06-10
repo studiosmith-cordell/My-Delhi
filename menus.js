@@ -24,20 +24,20 @@ $('#apply-filters').on('click', function () {
 
 $('[data-filter-button]').on('click', function () {
   let button = $(this).attr('data-filter-button');
-  let filter = '[data-filter-checkbox="' + button + '"]'
+  let filter = '[data-filter-checkbox="' + button + '"]';
   if (button === 'Vegetarian') {
     let vegan = $('[data-filter-checkbox="Vegan"]').is(':checked');
     if (vegan) {
-      $('[data-filter-checkbox="Vegan"]').trigger('click')
+      $('[data-filter-checkbox="Vegan"]').trigger('click');
     }
-  };
+  }
   if (button === 'Vegan') {
     let vegetarian = $('[data-filter-checkbox="Vegetarian"]').is(':checked');
     if (vegetarian) {
-      $('[data-filter-checkbox="Vegetarian"]').trigger('click')
+      $('[data-filter-checkbox="Vegetarian"]').trigger('click');
     }
-  };
-  $(filter).trigger('click')
+  }
+  $(filter).trigger('click');
 });
 
 $('[data-filter-checkbox]').on('change', function () {
@@ -51,12 +51,12 @@ $('[data-filter-checkbox]').on('change', function () {
   } else {
     $('[data-filter-count]').css('display', 'none');
     $('[data-filter-count]').text(filterCount);
-  };  
+  }
   if (checked) {
     $(button).addClass('filter__btn--active');
   } else if (!checked) {
     $(button).removeClass('filter__btn--active');
-  };
+  }
   localStorage.setItem(checkbox, checked);
 });
 
@@ -64,10 +64,9 @@ $('[fs-cmsfilter-element="clear"]').on('click', function () {
   $('[data-filter-button]').removeClass('filter__btn--active');
 });
 
-
 Object.entries(window.localStorage).forEach(([key, val]) => {
-  filter = '[data-filter-checkbox="' + key + '"]'
+  filter = '[data-filter-checkbox="' + key + '"]';
   if (val === 'true') {
     $(filter).trigger('click');
-  };
+  }
 });

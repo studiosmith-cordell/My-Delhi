@@ -1,4 +1,4 @@
-addEventListener("DOMContentLoaded", (event) => {
+addEventListener('DOMContentLoaded', (event) => {
   //hero logo on home page animation
   $('[hero_logo_svg]').each(function (index) {
     let tl = gsap.timeline({});
@@ -10,9 +10,9 @@ addEventListener("DOMContentLoaded", (event) => {
       ease: 'power2.out',
       stagger: {
         amount: 0.6,
-        from: "edges",
-        ease: 'power2.in'
-      }
+        from: 'edges',
+        ease: 'power2.in',
+      },
     });
   });
 
@@ -23,7 +23,7 @@ addEventListener("DOMContentLoaded", (event) => {
       xPercent: -100,
       duration: 90,
       repeat: -1,
-      ease: 'none'
+      ease: 'none',
     });
   });
 
@@ -34,27 +34,27 @@ addEventListener("DOMContentLoaded", (event) => {
       xPercent: -100,
       duration: 180,
       repeat: -1,
-      ease: 'none'
+      ease: 'none',
     });
-    
-    $('.h-food').on("mouseenter", function () {
+
+    $('.h-food').on('mouseenter', function () {
       gsap.to(tl, 0.6, {
         timeScale: 0,
-        ease: "power1.out",
+        ease: 'power1.out',
         onComplete: function () {
           tl.pause();
-        }
+        },
       });
     });
 
-    $('.h-food').on("mouseleave", function () {
+    $('.h-food').on('mouseleave', function () {
       tl.play();
       gsap.to(tl, 0.6, {
         timeScale: 1,
-        ease: "power1.in",
+        ease: 'power1.in',
         onComplete: function () {
           tl.play();
-        }
+        },
       });
     });
   });
@@ -67,20 +67,20 @@ addEventListener("DOMContentLoaded", (event) => {
       spaceBetween: 20,
       speed: 400,
       mousewheel: {
-        forceToAxis: true
+        forceToAxis: true,
       },
       breakpoints: {
         480: {
-          slidesPerView: 1.5
+          slidesPerView: 1.5,
         },
         768: {
-          slidesPerView: 2.5
-        }
+          slidesPerView: 2.5,
+        },
       },
       navigation: {
-        nextEl: $(this).find(".swiper-next")[0],
-        prevEl: $(this).find(".swiper-prev")[0]
-      }
+        nextEl: $(this).find('.swiper-next')[0],
+        prevEl: $(this).find('.swiper-prev')[0],
+      },
     });
   });
 
@@ -93,33 +93,32 @@ addEventListener("DOMContentLoaded", (event) => {
       spaceBetween: 10,
       speed: 400,
       mousewheel: {
-        forceToAxis: true
+        forceToAxis: true,
       },
       breakpoints: {
         480: {
           slidesPerView: 2,
           slidesPerGroup: 2,
-          spaceBetween: 20
+          spaceBetween: 20,
         },
         768: {
           slidesPerView: 3,
-        slidesPerGroup: 3,
-        spaceBetween: 20
-        }
+          slidesPerGroup: 3,
+          spaceBetween: 20,
+        },
       },
       pagination: {
-          el: $(this).find('.swiper-bullet-wrapper')[0],
+        el: $(this).find('.swiper-bullet-wrapper')[0],
         type: 'bullets',
         bulletActiveClass: 'is-active',
         bulletClass: 'swiper-bullet',
         bulletElement: 'button',
-        clickable: true
+        clickable: true,
       },
       navigation: {
-        nextEl: $(this).find(".swiper-next")[0],
-        prevEl: $(this).find(".swiper-prev")[0]
-      }
+        nextEl: $(this).find('.swiper-next')[0],
+        prevEl: $(this).find('.swiper-prev')[0],
+      },
     });
   });
-  
 });

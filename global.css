@@ -1,10 +1,10 @@
-* { 
-    -webkit-font-smoothing: antialiased; 
-    -moz-osx-font-smoothing: grayscale; 
-    font-kerning: normal;
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: normal;
 }
 
-::selection{
+::selection {
   background-color: var(--primary--yellow);
   color: var(--primary--black);
 }
@@ -67,45 +67,68 @@ button {
 }
 
 .grid.grid--nav-btm {
-  font-size: var(--font-size--body)
+  font-size: var(--font-size--body);
 }
 
-[currency="true"]:before {
-  content:'£';
+[currency='true']:before {
+  content: '£';
 }
 
-[clip-shape="hero-star"] {clip-path: url(#hero-star);}
-[clip-shape="frame-1"] {clip-path: url(#frame-1);}
-[clip-shape="frame-2"] {clip-path: url(#frame-2);}
-[clip-shape="frame-3"] {clip-path: url(#frame-3);}
-[clip-shape="frame-4"] {clip-path: url(#frame-4);}
-[clip-shape="frame-5"] {clip-path: url(#frame-5);}
-[clip-shape="frame-6"] {clip-path: url(#frame-6);}
-[clip-shape="modal"] {clip-path: url(#modal);}
+[clip-shape='hero-star'] {
+  clip-path: url(#hero-star);
+}
+[clip-shape='frame-1'] {
+  clip-path: url(#frame-1);
+}
+[clip-shape='frame-2'] {
+  clip-path: url(#frame-2);
+}
+[clip-shape='frame-3'] {
+  clip-path: url(#frame-3);
+}
+[clip-shape='frame-4'] {
+  clip-path: url(#frame-4);
+}
+[clip-shape='frame-5'] {
+  clip-path: url(#frame-5);
+}
+[clip-shape='frame-6'] {
+  clip-path: url(#frame-6);
+}
+[clip-shape='modal'] {
+  clip-path: url(#modal);
+}
 
-.news-slide, .hindi, [balance] {
+.news-slide,
+.hindi,
+[balance] {
   text-wrap: balance;
 }
 
 .swiper-pagination-bullets.swiper-pagination-horizontal {
-    width: auto!important;
-    max-width: 100%!important;
-    flex-wrap: wrap!important;
+  width: auto !important;
+  max-width: 100% !important;
+  flex-wrap: wrap !important;
 }
 
-.swiper-button-disabled, .swiper-button-disabled:hover {
-  opacity: 0
+.swiper-button-disabled,
+.swiper-button-disabled:hover {
+  opacity: 0;
 }
 
 .section--cream-40-circles-top::before {
-    content: '';
+  content: '';
   position: absolute;
   z-index: 1;
   top: -50px;
   left: 0;
   right: 0;
-  height: 100px; 
-  background: radial-gradient(circle, var(--secondary--cream-40) 55%, transparent 45%); 
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    var(--secondary--cream-40) 55%,
+    transparent 45%
+  );
   background-size: 50px;
   background-position: -25px 50%;
   pointer-events: none;
@@ -118,8 +141,12 @@ button {
   bottom: -50px;
   left: 0;
   right: 0;
-  height: 100px; 
-  background: radial-gradient(circle, var(--secondary--cream-40) 55%, transparent 45%); 
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    var(--secondary--cream-40) 55%,
+    transparent 45%
+  );
   background-size: 50px;
   background-position: -25px 50%;
   pointer-events: none;
@@ -132,13 +159,16 @@ button {
   top: -50px;
   left: 0;
   right: 0;
-  height: 100px; 
-  background: radial-gradient(circle, var(--secondary--cream) 55%, transparent 45%); 
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    var(--secondary--cream) 55%,
+    transparent 45%
+  );
   background-size: 50px;
   background-position: -25px 50%;
   pointer-events: none;
 }
-
 
 .section--cream-80-circles-btm::after {
   content: '';
@@ -147,8 +177,12 @@ button {
   bottom: -50px;
   left: 0;
   right: 0;
-  height: 100px; 
-  background: radial-gradient(circle, var(--secondary--cream-80) 55%, transparent 45%); 
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    var(--secondary--cream-80) 55%,
+    transparent 45%
+  );
   background-size: 50px;
   background-position: -25px 50%;
   pointer-events: none;
@@ -161,8 +195,12 @@ button {
   top: -50px;
   left: 0;
   right: 0;
-  height: 100px; 
-  background: radial-gradient(circle, var(--primary--orange) 55%, transparent 45%); 
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    var(--primary--orange) 55%,
+    transparent 45%
+  );
   background-size: 50px;
   background-position: -25px 50%;
   pointer-events: none;
@@ -175,8 +213,12 @@ button {
   bottom: -50px;
   left: 0;
   right: 0;
-  height: 100px; 
-  background: radial-gradient(circle, var(--primary--orange) 55%, transparent 45%); 
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    var(--primary--orange) 55%,
+    transparent 45%
+  );
   background-size: 50px;
   background-position: -25px 50%;
   pointer-events: none;
@@ -189,8 +231,12 @@ button {
   bottom: -50px;
   left: 0;
   right: 0;
-  height: 100px; 
-  background: radial-gradient(circle, var(--secondary--pink) 55%, transparent 45%); 
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    var(--secondary--pink) 55%,
+    transparent 45%
+  );
   background-size: 50px;
   background-position: -25px 50%;
   pointer-events: none;
@@ -203,8 +249,12 @@ button {
   bottom: -50px;
   left: 0;
   right: 0;
-  height: 100px; 
-  background: radial-gradient(circle, var(--secondary--green) 55%, transparent 45%); 
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    var(--secondary--green) 55%,
+    transparent 45%
+  );
   background-size: 50px;
   background-position: -25px 50%;
   pointer-events: none;
@@ -217,8 +267,12 @@ button {
   bottom: -50px;
   left: 0;
   right: 0;
-  height: 100px; 
-  background: radial-gradient(circle, var(--secondary--blue) 55%, transparent 45%); 
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    var(--secondary--blue) 55%,
+    transparent 45%
+  );
   background-size: 50px;
   background-position: -25px 50%;
   pointer-events: none;
@@ -231,8 +285,12 @@ button {
   bottom: -50px;
   left: 0;
   right: 0;
-  height: 100px; 
-  background: radial-gradient(circle, var(--secondary--cream) 55%, transparent 45%); 
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    var(--secondary--cream) 55%,
+    transparent 45%
+  );
   background-size: 50px;
   background-position: -25px 50%;
   pointer-events: none;
@@ -245,21 +303,28 @@ button {
   top: -50px;
   left: 0;
   right: 0;
-  height: 100px; 
-  background: radial-gradient(circle, var(--primary--orange) 55%, transparent 45%); 
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    var(--primary--orange) 55%,
+    transparent 45%
+  );
   background-size: 50px;
   background-position: -25px 50%;
   pointer-events: none;
 }
 
 .my-delhi-bg {
-  background-image: url("https://uploads-ssl.webflow.com/6549128db41d15ae06784cbc/65ba22c38601d5eadb407f53_my-delhi-logo-yellow.svg"), url("https://uploads-ssl.webflow.com/6549128db41d15ae06784cbc/65ba22c38601d5eadb407f53_my-delhi-logo-yellow.svg");
+  background-image: url('https://uploads-ssl.webflow.com/6549128db41d15ae06784cbc/65ba22c38601d5eadb407f53_my-delhi-logo-yellow.svg'),
+    url('https://uploads-ssl.webflow.com/6549128db41d15ae06784cbc/65ba22c38601d5eadb407f53_my-delhi-logo-yellow.svg');
   background-repeat: repeat, repeat;
   background-size: 200px 160px, 200px 160px;
   background-position: -100px -80px, 0px 0px;
 }
 
-.cart__container {position: relative;}
+.cart__container {
+  position: relative;
+}
 
 .cart__container::before {
   content: '';
@@ -268,7 +333,11 @@ button {
   left: -50px;
   bottom: 0px;
   width: 100px;
-  background: radial-gradient(circle, var(--primary--orange) 55%, transparent 45%); 
+  background: radial-gradient(
+    circle,
+    var(--primary--orange) 55%,
+    transparent 45%
+  );
   background-size: 100px 50px;
   background-position: 0% 25px;
   background-repeat: repeat-y;
@@ -280,16 +349,17 @@ button {
 }
 
 html.lenis {
-    height: auto;
+  height: auto;
 }
 .lenis.lenis-smooth {
-    scroll-behavior: auto;
+  scroll-behavior: auto;
 }
 .lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
+  overscroll-behavior: contain;
 }
-.lenis.lenis-stopped, .word {
-    overflow: hidden;
+.lenis.lenis-stopped,
+.word {
+  overflow: hidden;
 }
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
@@ -300,18 +370,20 @@ html.lenis {
 }
 
 .word {
-    padding-top: 0.2em;
-    margin-top: -0.2em;
-    margin-bottom: -0.2em;
-    overflow: hidden;
+  padding-top: 0.2em;
+  margin-top: -0.2em;
+  margin-bottom: -0.2em;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 767px) {
-    .cookie__consent {
-      max-width: calc(100vw - (var(--page-padding--mobile) * 2));
-    }
+  .cookie__consent {
+    max-width: calc(100vw - (var(--page-padding--mobile) * 2));
+  }
 
-    [clip-shape="modal"] {clip-path: url(#frame-6);}
+  [clip-shape='modal'] {
+    clip-path: url(#frame-6);
+  }
 }
 
 @media only screen and (min-width: 1920px) {

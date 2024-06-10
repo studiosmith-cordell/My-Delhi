@@ -12559,11 +12559,15 @@
         ease: "power1.in"
       }
     });
-    tl.from($(this).find(".hindi"), {
-      opacity: 0,
-      duration: 1,
-      ease: "power2.inout"
-    }, "-=0.3");
+    tl.from(
+      $(this).find(".hindi"),
+      {
+        opacity: 0,
+        duration: 1,
+        ease: "power2.inout"
+      },
+      "-=0.3"
+    );
     ScrollTrigger2.create({
       trigger: $(this),
       start: "top bottom",
@@ -12664,7 +12668,13 @@
     });
   });
   var menuTl = new gsapWithCSS.timeline({ paused: true });
-  menuTl.from($(".nav").find(".nav__link, .nav__star"), { yPercent: 110, opacity: 0, duration: 0.6, ease: "back.out(2)", stagger: { amount: 0.4, ease: "power1.in" } });
+  menuTl.from($(".nav").find(".nav__link, .nav__star"), {
+    yPercent: 110,
+    opacity: 0,
+    duration: 0.6,
+    ease: "back.out(2)",
+    stagger: { amount: 0.4, ease: "power1.in" }
+  });
   $(".menu-btn").on("click", function() {
     if ($(this).attr("aria-expanded") === "false") {
       setTimeout(function() {
@@ -12745,50 +12755,3 @@
       lenis.stop();
     }, 50);
   });
-
-/*! Bundled license information:
-
-gsap/gsap-core.js:
-  (*!
-   * GSAP 3.12.5
-   * https://gsap.com
-   *
-   * @license Copyright 2008-2024, GreenSock. All rights reserved.
-   * Subject to the terms at https://gsap.com/standard-license or for
-   * Club GSAP members, the agreement issued with that membership.
-   * @author: Jack Doyle, jack@greensock.com
-  *)
-
-gsap/CSSPlugin.js:
-  (*!
-   * CSSPlugin 3.12.5
-   * https://gsap.com
-   *
-   * Copyright 2008-2024, GreenSock. All rights reserved.
-   * Subject to the terms at https://gsap.com/standard-license or for
-   * Club GSAP members, the agreement issued with that membership.
-   * @author: Jack Doyle, jack@greensock.com
-  *)
-
-gsap/Observer.js:
-  (*!
-   * Observer 3.12.5
-   * https://gsap.com
-   *
-   * @license Copyright 2008-2024, GreenSock. All rights reserved.
-   * Subject to the terms at https://gsap.com/standard-license or for
-   * Club GSAP members, the agreement issued with that membership.
-   * @author: Jack Doyle, jack@greensock.com
-  *)
-
-gsap/ScrollTrigger.js:
-  (*!
-   * ScrollTrigger 3.12.5
-   * https://gsap.com
-   *
-   * @license Copyright 2008-2024, GreenSock. All rights reserved.
-   * Subject to the terms at https://gsap.com/standard-license or for
-   * Club GSAP members, the agreement issued with that membership.
-   * @author: Jack Doyle, jack@greensock.com
-  *)
-*/
