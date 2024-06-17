@@ -1,3 +1,5 @@
+const { A11y } = require('swiper/modules');
+
 addEventListener('DOMContentLoaded', (event) => {
     //hero logo on home page animation
     $('[hero_logo_svg]').each(function (index) {
@@ -66,6 +68,7 @@ addEventListener('DOMContentLoaded', (event) => {
             slidesPerView: 1.2,
             spaceBetween: 20,
             speed: 400,
+            a11y: true,
             mousewheel: {
                 forceToAxis: true,
             },
@@ -77,13 +80,10 @@ addEventListener('DOMContentLoaded', (event) => {
                     slidesPerView: 2.5,
                 },
             },
-            navigation: true,
-            injectStyles: [
-                `
-                :host{
-                --swiper-theme-color: white;
-                }`,
-            ],
+            navigation: {
+                nextEl: $(this).find('.swiper-button-next')[0],
+                prevEl: $(this).find('.swiper-nutton-prev')[0],
+            },
         });
     });
 
@@ -95,6 +95,7 @@ addEventListener('DOMContentLoaded', (event) => {
             slidesPerGroup: 1,
             spaceBetween: 10,
             speed: 400,
+            a11y: true,
             mousewheel: {
                 forceToAxis: true,
             },

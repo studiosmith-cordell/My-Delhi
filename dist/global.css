@@ -589,6 +589,11 @@ html.lenis {
 .about-hero__mask {
   clip-path: polygon(15% 50%, 50% 20%, 85% 50%, 50% 80%);
 }
+.swiper-button-prev,
+.swiper-button-next {
+  --swiper-theme-color: white;
+  --swiper-navigation-color: white;
+}
 @media only screen and (min-width: 992px) {
   .section.section--above-header:before {
     content: "";
