@@ -82,7 +82,7 @@ addEventListener('DOMContentLoaded', (event) => {
             },
             navigation: {
                 nextEl: $(this).find('.swiper-button-next')[0],
-                prevEl: $(this).find('.swiper-nutton-prev')[0],
+                prevEl: $(this).find('.swiper-button-prev')[0],
             },
         });
     });
