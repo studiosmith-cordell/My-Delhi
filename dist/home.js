@@ -70,7 +70,13 @@
             slidesPerView: 2.5
           }
         },
-        navigation: true
+        navigation: true,
+        injectStyles: [
+          `
+                :host{
+                --swiper-theme-color: white;
+                }`
+        ]
       });
     });
     $(".swiper-component--news").each(function(index) {

@@ -78,6 +78,12 @@ addEventListener('DOMContentLoaded', (event) => {
                 },
             },
             navigation: true,
+            injectStyles: [
+                `
+                :host{
+                --swiper-theme-color: white;
+                }`,
+            ],
         });
     });
 
