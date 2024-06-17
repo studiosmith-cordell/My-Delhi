@@ -51,6 +51,10 @@ declare const Swiper: DefineComponent<
       type: PropType<SwiperOptions['oneWayMovement']>;
       default: SwiperOptions['oneWayMovement'];
     };
+    swiperElementNodeName: {
+      type: PropType<SwiperOptions['swiperElementNodeName']>;
+      default: SwiperOptions['swiperElementNodeName'];
+    };
     touchEventsTarget: {
       type: PropType<SwiperOptions['touchEventsTarget']>;
       default: undefined;
@@ -472,9 +476,6 @@ declare const Swiper: DefineComponent<
    * Event will be fired on key press
    */
   keyPress: (swiper: SwiperClass, keyCode: string) => void;/**
-   * Event will be fired on mousewheel scroll
-   */
-  scroll: (swiper: SwiperClass, event: WheelEvent) => void;/**
    * Event will be fired on navigation hide
    */
   navigationHide: (swiper: SwiperClass) => void;
@@ -523,7 +524,10 @@ declare const Swiper: DefineComponent<
   scrollbarDragEnd: (swiper: SwiperClass, event: MouseEvent | TouchEvent | PointerEvent) => void;/**
    * Event will be fired on zoom change
    */
-  zoomChange: (swiper: SwiperClass, scale: number, imageEl: HTMLElement, slideEl: HTMLElement) => void;
+  zoomChange: (swiper: SwiperClass, scale: number, imageEl: HTMLElement, slideEl: HTMLElement) => void;/**
+   * Event will be fired on mousewheel scroll
+   */
+  scroll: (swiper: SwiperClass, event: WheelEvent) => void;
     
   /**
    * Fired right after Swiper initialization.
