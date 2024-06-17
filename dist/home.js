@@ -70,10 +70,7 @@
             slidesPerView: 2.5
           }
         },
-        navigation: {
-          nextEl: $(this).find(".swiper-next")[0],
-          prevEl: $(this).find(".swiper-prev")[0]
-        }
+        navigation: true
       });
     });
     $(".swiper-component--news").each(function(index) {
