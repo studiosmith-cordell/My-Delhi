@@ -172,7 +172,6 @@ $('.menu-btn').on('click', function () {
 // Booking modal swiper
 $('.swiper-component--booking').each(function (index) {
   const swiperBook = new Swiper($(this).find('.swiper')[0], {
-    modules: [Navigation, Pagination],
     slidesPerView: 1.25,
     spaceBetween: 20,
     centeredSlides: true,

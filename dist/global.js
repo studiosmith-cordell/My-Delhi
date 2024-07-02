@@ -1,4 +1,4 @@
-
+(() => {
   // node_modules/split-type/dist/index.js
   (function() {
     function append() {
@@ -953,7 +953,6 @@
   });
   $(".swiper-component--booking").each(function(index) {
     const swiperBook = new Swiper($(this).find(".swiper")[0], {
-      modules: [Navigation, Pagination],
       slidesPerView: 1.25,
       spaceBetween: 20,
       centeredSlides: true,
@@ -1018,4 +1017,4 @@
       lenis.stop();
     }, 50);
   });
-
+})();

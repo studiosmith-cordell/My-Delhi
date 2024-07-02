@@ -59,7 +59,9 @@
         spaceBetween: 20,
         speed: 400,
         a11y: true,
-        mousewheel: false,
+        mousewheel: {
+          forceToAxis: true
+        },
         breakpoints: {
           480: {
             slidesPerView: 1.5
