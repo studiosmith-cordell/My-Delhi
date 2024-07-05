@@ -89,6 +89,7 @@ addEventListener('DOMContentLoaded', (event) => {
         const swiper = new Swiper($(this).find('.swiper')[0], {
             slidesPerView: 1,
             slidesPerGroup: 1,
+            loopAddBlankSlides: true,
             spaceBetween: 10,
             speed: 400,
             a11y: true,
