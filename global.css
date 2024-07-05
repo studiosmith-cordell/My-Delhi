@@ -99,7 +99,7 @@ button {
   clip-path: url(#modal);
 }
 
-[spice-level='Medium'] {
+[spice-level='Medium']::after {
   content: ' ';
   margin-left: 0.25em;
   display: inline-block;
@@ -109,7 +109,7 @@ button {
   background-size: 100%;
 }
 
-[spice-level='Spicy'] {
+[spice-level='Spicy']::after {
   content: ' ';
   margin-left: 0.25em;
   display: inline-block;
