@@ -74,28 +74,28 @@ button {
   content: '£';
 }
 
-[clip-shape='hero-star'] {
+html:not(.w-editor) [clip-shape='hero-star'] {
   clip-path: url(#hero-star);
 }
-[clip-shape='frame-1'] {
+html:not(.w-editor) [clip-shape='frame-1'] {
   clip-path: url(#frame-1);
 }
-[clip-shape='frame-2'] {
+html:not(.w-editor) [clip-shape='frame-2'] {
   clip-path: url(#frame-2);
 }
-[clip-shape='frame-3'] {
+html:not(.w-editor) [clip-shape='frame-3'] {
   clip-path: url(#frame-3);
 }
-[clip-shape='frame-4'] {
+html:not(.w-editor) [clip-shape='frame-4'] {
   clip-path: url(#frame-4);
 }
-[clip-shape='frame-5'] {
+html:not(.w-editor) [clip-shape='frame-5'] {
   clip-path: url(#frame-5);
 }
-[clip-shape='frame-6'] {
+html:not(.w-editor) [clip-shape='frame-6'] {
   clip-path: url(#frame-6);
 }
-[clip-shape='modal'] {
+html:not(.w-editor) [clip-shape='modal'] {
   clip-path: url(#modal);
 }
 
