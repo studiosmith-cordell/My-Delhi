@@ -52,7 +52,6 @@ body {
 @media only print {
   body {
     --font-size--body: 12pt;
-    --page-padding--main: var(--page-padding--mobile);
   }
 
   header {
@@ -65,6 +64,14 @@ body {
 
   .cookie {
     display: none;
+  }
+
+  #open-filters {
+    display: none;
+  }
+
+  .section {
+    padding: var(--page-padding--main) 0;
   }
 }
 
