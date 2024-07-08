@@ -48,12 +48,13 @@ body {
 @media only print {
   body {
     --font-size--body: 12pt;
+    --page-padding--main: var(--page-padding--mobile);
   }
   header {
-    display: none;
+    display: none !important;
   }
   footer {
-    display: none;
+    display: none !important;
   }
   .cookie {
     display: none;
