@@ -49,6 +49,24 @@ body {
   }
 }
 
+@media only print {
+  body {
+    --font-size--body: 12pt;
+  }
+
+  header {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+
+  .cookie {
+    display: none;
+  }
+}
+
 p {
   text-wrap: pretty;
 }
