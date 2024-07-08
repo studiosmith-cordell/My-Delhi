@@ -1,37 +1,41 @@
 .menu__nav__link:hover,
 .menu__nav__link.w--current {
-  text-decoration: underline;
-  text-decoration-thickness: 0.125em;
-  text-underline-offset: 0.275em;
-  text-decoration-style: solid;
+    text-decoration: underline;
+    text-decoration-thickness: 0.125em;
+    text-underline-offset: 0.275em;
+    text-decoration-style: solid;
 }
 
 .menu__item__h > h3 {
-  font-size: inherit;
-  margin: 0em;
+    font-size: inherit;
+    margin: 0em;
 }
 
 [featured='true'] {
-  padding: 1.5em 10px;
-  margin: -1.5em -10px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: var(--primary--black);
+    padding: 1.5em 10px;
+    margin: -1.5em -10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--primary--black);
 }
 
 h1[text-split] {
-  margin-bottom: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .filter__btn--active {
-  text-decoration: underline;
-  text-decoration-thickness: 0.125em;
-  text-underline-offset: 0.275em;
-  text-decoration-color: var(--primary--orange);
+    text-decoration: underline;
+    text-decoration-thickness: 0.125em;
+    text-underline-offset: 0.275em;
+    text-decoration-color: var(--primary--orange);
+}
+
+[data-price-tier] {
+    display: none;
 }
 
 @media only screen and (max-width: 479px) {
-  .filter__btn--active {
-    text-decoration-thickness: 4px;
-  }
+    .filter__btn--active {
+        text-decoration-thickness: 4px;
+    }
 }

@@ -782,7 +782,9 @@
       }
     }
     if (button === "Vegan") {
-      let vegetarian = $('[data-filter-checkbox="Vegetarian"]').is(":checked");
+      let vegetarian = $('[data-filter-checkbox="Vegetarian"]').is(
+        ":checked"
+      );
       if (vegetarian) {
         $('[data-filter-checkbox="Vegetarian"]').trigger("click");
       }
@@ -816,5 +818,39 @@
     if (val === "true") {
       $(filter).trigger("click");
     }
+  });
+  addEventListener("DOMContentLoaded", (event) => {
+    $("[data-venue-item]").each(function() {
+      let venueName = $(this).find("[data-venue-name]").text();
+      let venueTier = $(this).find("[data-venue-tier]").text();
+      $("[data-venue-select]").append(
+        '<option value="' + venueTier + '">' + venueName + "</option>"
+      );
+    });
+    let userPriceTier = localStorage.getItem("user-price-tier");
+    let userLocation = localStorage.getItem("user-location");
+    $("[data-price-tier]").css("display", "none");
+    if (userPriceTier) {
+      $(`[data-venue-select] option:contains(${userLocation})`).prop(
+        "selected",
+        true
+      );
+      $(`[data-price-tier="${userPriceTier}"]`).css(
+        "display",
+        "inline-block"
+      );
+    } else {
+      let firstItem = $("[data-venue-select]").prop("selectedIndex", 0).val();
+      console.log(`The first item is ${firstItem}`);
+      $(`[data-price-tier="${firstItem}"]`).css("display", "inline-block");
+    }
+    $("[data-venue-select]").on("change", function() {
+      let priceTier = this.value;
+      let location = this.options[this.selectedIndex].text;
+      localStorage.setItem("user-price-tier", priceTier);
+      localStorage.setItem("user-location", location);
+      $("[data-price-tier]").css("display", "none");
+      $(`[data-price-tier="${priceTier}"]`).css("display", "inline-block");
+    });
   });
 })();
