@@ -433,10 +433,6 @@ html.lenis {
     .cookie__consent {
         max-width: calc(100vw - (var(--page-padding--mobile) * 2));
     }
-
-    [clip-shape='modal'] {
-        clip-path: url(#frame-6);
-    }
 }
 
 @media only screen and (min-width: 1920px) {

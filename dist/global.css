@@ -391,9 +391,6 @@ html.lenis {
   .cookie__consent {
     max-width: calc(100vw - (var(--page-padding--mobile) * 2));
   }
-  [clip-shape=modal] {
-    clip-path: url(#frame-6);
-  }
 }
 @media only screen and (min-width: 1920px) {
   body {
@@ -639,7 +636,7 @@ html.lenis {
   --swiper-navigation-color: white;
 }
 .swiper-button-disabled {
-  display: none;
+  visibility: hidden;
 }
 @media only screen and (min-width: 992px) {
   .section.section--above-header:before {
