@@ -108,6 +108,11 @@ html:not(.w-editor) [clip-shape=frame-6] {
 html:not(.w-editor) [clip-shape=modal] {
   clip-path: url(#modal);
 }
+@media only screen and (max-width: 479px) {
+  html:not(.w-editor) [clip-shape=modal] {
+    clip-path: url(#frame-6);
+  }
+}
 [spice-level=Medium]::after {
   content: " ";
   margin-left: 0.25em;
