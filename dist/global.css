@@ -625,6 +625,12 @@ html.lenis {
     grid-column-end: 13;
   }
 }
+@media only screen and (max-width: 767px) {
+  [class*=sd],
+  [class*=ed] {
+    grid-column: span 1;
+  }
+}
 
 /* home.css */
 .about-hero__mask {
