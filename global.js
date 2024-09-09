@@ -1,6 +1,3 @@
-import './global.css';
-import './grid.css';
-import './home.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Lenis from '@studio-freight/lenis';
@@ -10,6 +7,9 @@ import 'swiper/css';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import './global.css';
+import './grid.css';
+import './home.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
