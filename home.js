@@ -62,6 +62,7 @@ addEventListener('DOMContentLoaded', (event) => {
     //home shop slider
     $('.swiper-component--shop').each(function (index) {
         const swiper = new Swiper($(this).find('.swiper')[0], {
+            modules: [Navigation, Pagination],
             slidesPerView: 1.2,
             spaceBetween: 20,
             speed: 400,
@@ -87,6 +88,7 @@ addEventListener('DOMContentLoaded', (event) => {
     //home news article slider
     $('.swiper-component--news').each(function (index) {
         const swiper = new Swiper($(this).find('.swiper')[0], {
+            modules: [Navigation, Pagination],
             slidesPerView: 1,
             slidesPerGroup: 1,
             loopAddBlankSlides: true,

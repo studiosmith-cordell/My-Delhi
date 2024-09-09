@@ -1,7 +1,15 @@
 import './global.css';
 import './grid.css';
 import './home.css';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import Lenis from '@studio-freight/lenis';
 import SplitType from 'split-type';
+import Swiper from 'swiper';
+import 'swiper/css';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -172,6 +180,7 @@ $('.menu-btn').on('click', function () {
 // Booking modal swiper
 $('.swiper-component--booking').each(function (index) {
     const swiperBook = new Swiper($(this).find('.swiper')[0], {
+        modules: [Navigation, Pagination],
         slidesPerView: 1.25,
         spaceBetween: 20,
         centeredSlides: true,
