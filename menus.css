@@ -30,7 +30,7 @@ h1[text-split] {
     text-decoration-color: var(--primary--orange);
 }
 
-[data-price-tier] {
+[data-price-tier], [data-available-location] {
     display: none;
 }
 
