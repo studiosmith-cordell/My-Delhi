@@ -843,19 +843,10 @@
       let firstItem = $("[data-venue-select]").prop("selectedIndex", 0).val();
       $(`[data-price-tier="${firstItem}"]`).css("display", "inline-block");
     }
-    $("[data-available-location]").css("display", "none");
     if (userLocation) {
       $("[data-available-location]").each(function() {
         let availableLocation = $(this).attr("data-available-location");
         if (availableLocation.includes(userLocation)) {
-          $(this).css("display", "block");
-        }
-      });
-    } else {
-      let firstItem = $("[data-venue-select]").find("option:first-child").text();
-      $("[data-available-location]").each(function() {
-        let availableLocation = $(this).attr("data-available-location");
-        if (availableLocation.includes(firstItem)) {
           $(this).css("display", "block");
         }
       });

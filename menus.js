@@ -98,7 +98,6 @@ addEventListener('DOMContentLoaded', (event) => {
         $(`[data-price-tier="${firstItem}"]`).css('display', 'inline-block');
     }
 
-    $('[data-available-location]').css('display', 'none');
     if (userLocation) {
         $('[data-available-location]').each(function () {
             let availableLocation = $(this).attr('data-available-location');
@@ -106,18 +105,7 @@ addEventListener('DOMContentLoaded', (event) => {
                 $(this).css('display', 'block');
             }
         });
-    } else {
-        let firstItem = $('[data-venue-select]')
-            .find('option:first-child')
-            .text();
-
-        $('[data-available-location]').each(function () {
-            let availableLocation = $(this).attr('data-available-location');
-            if (availableLocation.includes(firstItem)) {
-                $(this).css('display', 'block');
-            }
-        });
-    }
+    } 
 
     // Change prices if select field changes
     $('[data-venue-select]').on('change', function () {
