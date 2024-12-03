@@ -12657,41 +12657,39 @@
     $(this).toggleClass("is--open");
   });
   var lenis;
-  if (Webflow === void 0 || Webflow.env("editor") === void 0) {
-    let raf = function(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    lenis = new Lenis({
-      lerp: 0.12,
-      wheelMultiplier: 1,
-      gestureOrientation: "vertical",
-      normalizeWheel: false,
-      smoothTouch: false,
-      smoothWheel: true
-    });
+  lenis = new Lenis({
+    lerp: 0.12,
+    wheelMultiplier: 1,
+    gestureOrientation: "vertical",
+    normalizeWheel: false,
+    smoothTouch: false,
+    smoothWheel: true
+  });
+  function raf(time) {
+    lenis.raf(time);
     requestAnimationFrame(raf);
-    $("[data-lenis-start]").on("click", function() {
-      lenis.start();
-    });
-    $("[data-lenis-stop]").on("click", function() {
-      lenis.stop();
-    });
-    $("[data-lenis-toggle]").on("click", function() {
-      $(this).toggleClass("stop-scroll");
-      if ($(this).hasClass("stop-scroll")) {
-        lenis.stop();
-      } else {
-        lenis.start();
-      }
-    });
-    $("[mobile-reservations]").on("click", function() {
-      $("[aria-label='menu']").trigger("click");
-      setTimeout(() => {
-        lenis.stop();
-      }, 50);
-    });
   }
+  requestAnimationFrame(raf);
+  $("[data-lenis-start]").on("click", function() {
+    lenis.start();
+  });
+  $("[data-lenis-stop]").on("click", function() {
+    lenis.stop();
+  });
+  $("[data-lenis-toggle]").on("click", function() {
+    $(this).toggleClass("stop-scroll");
+    if ($(this).hasClass("stop-scroll")) {
+      lenis.stop();
+    } else {
+      lenis.start();
+    }
+  });
+  $("[mobile-reservations]").on("click", function() {
+    $("[aria-label='menu']").trigger("click");
+    setTimeout(() => {
+      lenis.stop();
+    }, 50);
+  });
 
 /*! Bundled license information:
 
