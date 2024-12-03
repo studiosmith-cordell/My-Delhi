@@ -12657,7 +12657,7 @@
     $(this).toggleClass("is--open");
   });
   var lenis;
-  if (!Webflow || Webflow.env("editor") === void 0) {
+  if (Webflow === void 0 || Webflow.env("editor") === void 0) {
     let raf = function(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
