@@ -12657,7 +12657,7 @@
     $(this).toggleClass("is--open");
   });
   var lenis;
-  if (Webflow.env("editor") === void 0) {
+  if (Webflow.env("editor") === undefined) {
     let raf = function(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
