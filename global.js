@@ -215,7 +215,7 @@ $('.faq__trigger').on('click', function () {
 // Smooth scroll
 let lenis;
 
-// if (Webflow.env('editor') === undefined) {
+if (Webflow.env('editor') === undefined) {
     lenis = new Lenis({
         lerp: 0.12,
         wheelMultiplier: 1,
@@ -254,4 +254,4 @@ let lenis;
             lenis.stop();
         }, 50);
     });
-// }
+}
