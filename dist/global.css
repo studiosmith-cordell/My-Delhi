@@ -831,8 +831,7 @@ html.lenis {
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }
-.lenis.lenis-stopped,
-.word {
+.lenis.lenis-stopped {
   overflow: hidden;
 }
 .lenis.lenis-scrolling iframe {
