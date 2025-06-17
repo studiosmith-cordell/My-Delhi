@@ -18,7 +18,7 @@ let split = SplitText.create('[text-split]', {
 	type: 'words, chars',
 	wordsClass: 'word',
 	charsClass: 'char',
-	mask: 'word',
+	mask: 'words',
 });
 
 $('[txt-slide-up]').each(function (index) {

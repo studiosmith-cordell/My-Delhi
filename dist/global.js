@@ -4773,9 +4773,7 @@ var require_ScrollTrigger = __commonJS({
 			exports2.ScrollTrigger = ScrollTrigger$1;
 			exports2.default = ScrollTrigger$1;
 			if (typeof window === 'undefined' || window !== exports2) {
-				Object.defineProperty(exports2, '__esModule', {
-					value: true,
-				});
+				Object.defineProperty(exports2, '__esModule', { value: true });
 			} else {
 				delete window.default;
 			}
@@ -12570,11 +12568,7 @@ var VirtualScroll = class {
 		(this.touchStart.x = e2),
 			(this.touchStart.y = i),
 			(this.lastDelta = { x: 0, y: 0 }),
-			this.emitter.emit('scroll', {
-				deltaX: 0,
-				deltaY: 0,
-				event: t2,
-			});
+			this.emitter.emit('scroll', { deltaX: 0, deltaY: 0, event: t2 });
 	};
 	onTouchMove = (t2) => {
 		const { clientX: e2, clientY: i } = t2.targetTouches
@@ -12585,11 +12579,7 @@ var VirtualScroll = class {
 		(this.touchStart.x = e2),
 			(this.touchStart.y = i),
 			(this.lastDelta = { x: s, y: o }),
-			this.emitter.emit('scroll', {
-				deltaX: s,
-				deltaY: o,
-				event: t2,
-			});
+			this.emitter.emit('scroll', { deltaX: s, deltaY: o, event: t2 });
 	};
 	onTouchEnd = (t2) => {
 		this.emitter.emit('scroll', {
@@ -12604,11 +12594,7 @@ var VirtualScroll = class {
 			(s *= 1 === o ? e : 2 === o ? this.windowHeight : 1),
 			(i *= this.wheelMultiplier),
 			(s *= this.wheelMultiplier),
-			this.emitter.emit('scroll', {
-				deltaX: i,
-				deltaY: s,
-				event: t2,
-			});
+			this.emitter.emit('scroll', { deltaX: i, deltaY: s, event: t2 });
 	};
 	onWindowResize = () => {
 		(this.windowWidth = window.innerWidth),
@@ -12718,11 +12704,7 @@ var Lenis = class {
 						Object.assign(
 							{ programmatic: false },
 							a2
-								? {
-										lerp: c2
-											? this.options.syncTouchLerp
-											: 1,
-								  }
+								? { lerp: c2 ? this.options.syncTouchLerp : 1 }
 								: {
 										lerp: this.options.lerp,
 										duration: this.options.duration,
@@ -18962,7 +18944,7 @@ var split = import_SplitText.SplitText.create('[text-split]', {
 	type: 'words, chars',
 	wordsClass: 'word',
 	charsClass: 'char',
-	mask: 'word',
+	mask: 'words',
 });
 $('[txt-slide-up]').each(function (index) {
 	let tl = new gsapWithCSS.timeline({ paused: true });
