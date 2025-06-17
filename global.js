@@ -1,8 +1,7 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import { SplitText } from 'gsap/dist/SplitText';
+// import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+// import { SplitText } from 'gsap/dist/SplitText';
 import Lenis from '@studio-freight/lenis';
-
 import Swiper from 'swiper';
 import 'swiper/css';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -12,7 +11,7 @@ import './global.css';
 import './grid.css';
 import './home.css';
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+// gsap.registerPlugin(ScrollTrigger, SplitText);
 
 let split = SplitText.create('[text-split]', {
 	type: 'words, chars',
