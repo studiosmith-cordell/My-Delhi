@@ -1,6 +1,3 @@
-// import gsap from 'gsap';
-// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-// import { SplitText } from 'gsap/dist/SplitText';
 import Lenis from '@studio-freight/lenis';
 import Swiper from 'swiper';
 import 'swiper/css';
@@ -11,13 +8,11 @@ import './global.css';
 import './grid.css';
 import './home.css';
 
-// gsap.registerPlugin(ScrollTrigger, SplitText);
-
 let split = SplitText.create('[text-split]', {
 	type: 'words, chars',
 	wordsClass: 'word',
 	charsClass: 'char',
-	mask: 'words',
+	mask: 'words'
 });
 
 $('[txt-slide-up]').each(function (index) {
@@ -28,15 +23,15 @@ $('[txt-slide-up]').each(function (index) {
 		ease: 'back.out(2)',
 		stagger: {
 			amount: 0.4,
-			ease: 'power1.in',
-		},
+			ease: 'power1.in'
+		}
 	});
 	tl.from(
 		$(this).find('.hindi'),
 		{
 			opacity: 0,
 			duration: 1,
-			ease: 'power2.inout',
+			ease: 'power2.inout'
 		},
 		'-=0.3'
 	);
@@ -46,13 +41,13 @@ $('[txt-slide-up]').each(function (index) {
 		start: 'top bottom',
 		onLeaveBack: () => {
 			tl.pause(0);
-		},
+		}
 	});
 
 	ScrollTrigger.create({
 		trigger: $(this),
 		start: 'top 80%',
-		onEnter: () => tl.play(),
+		onEnter: () => tl.play()
 	});
 });
 
@@ -64,7 +59,7 @@ $('[slide-from-left]').each(function (index) {
 		xPercent: -50,
 		duration: 1,
 		opacity: 0,
-		ease: 'power2.out',
+		ease: 'power2.out'
 	});
 
 	ScrollTrigger.create({
@@ -72,25 +67,25 @@ $('[slide-from-left]').each(function (index) {
 		start: 'top bottom',
 		onLeaveBack: () => {
 			tl.pause(0);
-		},
+		}
 	});
 
 	ScrollTrigger.create({
 		trigger: $(this),
 		start: 'top 60%',
-		onEnter: () => tl.play(),
+		onEnter: () => tl.play()
 	});
 });
 
 $('[slide-from-right]').each(function (index) {
 	let tl = new gsap.timeline({
-		paused: true,
+		paused: true
 	});
 	tl.from($(this), {
 		xPercent: 50,
 		duration: 1,
 		opacity: 0,
-		ease: 'power2.out',
+		ease: 'power2.out'
 	});
 
 	ScrollTrigger.create({
@@ -98,13 +93,13 @@ $('[slide-from-right]').each(function (index) {
 		start: 'top bottom',
 		onLeaveBack: () => {
 			tl.pause(0);
-		},
+		}
 	});
 
 	ScrollTrigger.create({
 		trigger: $(this),
 		start: 'top 60%',
-		onEnter: () => tl.play(),
+		onEnter: () => tl.play()
 	});
 });
 
@@ -113,7 +108,7 @@ $('[gsap="fade"]').each(function (index) {
 	tl.from($(this), {
 		duration: 1,
 		opacity: 0,
-		ease: 'power2.inout',
+		ease: 'power2.inout'
 	});
 
 	ScrollTrigger.create({
@@ -121,13 +116,13 @@ $('[gsap="fade"]').each(function (index) {
 		start: 'top bottom',
 		onLeaveBack: () => {
 			tl.pause(0);
-		},
+		}
 	});
 
 	ScrollTrigger.create({
 		trigger: $(this),
 		start: 'top 75%',
-		onEnter: () => tl.play(),
+		onEnter: () => tl.play()
 	});
 });
 
@@ -137,7 +132,7 @@ $('[gsap="grow"]').each(function (index) {
 		duration: 1,
 		scale: 0.8,
 		opacity: 0,
-		ease: 'power2.out',
+		ease: 'power2.out'
 	});
 
 	ScrollTrigger.create({
@@ -145,13 +140,13 @@ $('[gsap="grow"]').each(function (index) {
 		start: 'top bottom',
 		onLeaveBack: () => {
 			tl.pause(0);
-		},
+		}
 	});
 
 	ScrollTrigger.create({
 		trigger: $(this),
 		start: 'top 75%',
-		onEnter: () => tl.play(),
+		onEnter: () => tl.play()
 	});
 });
 
@@ -162,7 +157,7 @@ menuTl.from($('.nav').find('.nav__link, .nav__star'), {
 	opacity: 0,
 	duration: 0.6,
 	ease: 'back.out(2)',
-	stagger: { amount: 0.4, ease: 'power1.in' },
+	stagger: { amount: 0.4, ease: 'power1.in' }
 });
 
 $('.menu-btn').on('click', function () {
@@ -189,7 +184,7 @@ $('.swiper-component--booking').each(function (index) {
 		loop: true,
 		speed: 400,
 		mousewheel: {
-			forceToAxis: true,
+			forceToAxis: true
 		},
 		pagination: {
 			el: $(this).find('.swiper-bullet-wrapper')[0],
@@ -197,12 +192,12 @@ $('.swiper-component--booking').each(function (index) {
 			bulletActiveClass: 'is-active',
 			bulletClass: 'swiper-bullet--yellow',
 			bulletElement: 'button',
-			clickable: true,
+			clickable: true
 		},
 		navigation: {
 			nextEl: $(this).find('.swiper-next')[0],
-			prevEl: $(this).find('.swiper-prev')[0],
-		},
+			prevEl: $(this).find('.swiper-prev')[0]
+		}
 	});
 });
 
@@ -219,19 +214,20 @@ let lenis;
 
 if (Webflow.env('editor') === undefined) {
 	lenis = new Lenis({
-		lerp: 0.12,
+		lerp: 0.15,
 		wheelMultiplier: 1,
 		gestureOrientation: 'vertical',
 		normalizeWheel: false,
-		smoothTouch: false,
-		smoothWheel: true,
+		smoothWheel: true
 	});
 
-	function raf(time) {
-		lenis.raf(time);
-		requestAnimationFrame(raf);
-	}
-	requestAnimationFrame(raf);
+	lenis.on('scroll', ScrollTrigger.update);
+
+	gsap.ticker.add((time) => {
+		lenis?.raf(time * 1000);
+	});
+
+	gsap.ticker.lagSmoothing(0);
 
 	$('[data-lenis-start]').on('click', function () {
 		lenis.start();
