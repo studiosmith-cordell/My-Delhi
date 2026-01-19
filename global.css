@@ -51,7 +51,7 @@ body {
 
 @media only print {
 	body {
-		--font-size--body: 12pt;
+		--font-size--body: 10pt;
 	}
 
 	header {
@@ -177,11 +177,7 @@ html:not(.w-editor) [clip-shape='modal'] {
 	left: 0;
 	right: 0;
 	height: 100px;
-	background: radial-gradient(
-		circle,
-		var(--secondary--cream-40) 55%,
-		transparent 45%
-	);
+	background: radial-gradient(circle, var(--secondary--cream-40) 55%, transparent 45%);
 	background-size: 50px;
 	background-position: -25px 50%;
 	pointer-events: none;
@@ -195,11 +191,7 @@ html:not(.w-editor) [clip-shape='modal'] {
 	left: 0;
 	right: 0;
 	height: 100px;
-	background: radial-gradient(
-		circle,
-		var(--secondary--cream-40) 55%,
-		transparent 45%
-	);
+	background: radial-gradient(circle, var(--secondary--cream-40) 55%, transparent 45%);
 	background-size: 50px;
 	background-position: -25px 50%;
 	pointer-events: none;
@@ -213,11 +205,7 @@ html:not(.w-editor) [clip-shape='modal'] {
 	left: 0;
 	right: 0;
 	height: 100px;
-	background: radial-gradient(
-		circle,
-		var(--secondary--cream) 55%,
-		transparent 45%
-	);
+	background: radial-gradient(circle, var(--secondary--cream) 55%, transparent 45%);
 	background-size: 50px;
 	background-position: -25px 50%;
 	pointer-events: none;
@@ -231,11 +219,7 @@ html:not(.w-editor) [clip-shape='modal'] {
 	left: 0;
 	right: 0;
 	height: 100px;
-	background: radial-gradient(
-		circle,
-		var(--secondary--cream-80) 55%,
-		transparent 45%
-	);
+	background: radial-gradient(circle, var(--secondary--cream-80) 55%, transparent 45%);
 	background-size: 50px;
 	background-position: -25px 50%;
 	pointer-events: none;
@@ -249,11 +233,7 @@ html:not(.w-editor) [clip-shape='modal'] {
 	left: 0;
 	right: 0;
 	height: 100px;
-	background: radial-gradient(
-		circle,
-		var(--primary--orange) 55%,
-		transparent 45%
-	);
+	background: radial-gradient(circle, var(--primary--orange) 55%, transparent 45%);
 	background-size: 50px;
 	background-position: -25px 50%;
 	pointer-events: none;
@@ -267,11 +247,7 @@ html:not(.w-editor) [clip-shape='modal'] {
 	left: 0;
 	right: 0;
 	height: 100px;
-	background: radial-gradient(
-		circle,
-		var(--primary--orange) 55%,
-		transparent 45%
-	);
+	background: radial-gradient(circle, var(--primary--orange) 55%, transparent 45%);
 	background-size: 50px;
 	background-position: -25px 50%;
 	pointer-events: none;
@@ -285,11 +261,7 @@ html:not(.w-editor) [clip-shape='modal'] {
 	left: 0;
 	right: 0;
 	height: 100px;
-	background: radial-gradient(
-		circle,
-		var(--secondary--pink) 55%,
-		transparent 45%
-	);
+	background: radial-gradient(circle, var(--secondary--pink) 55%, transparent 45%);
 	background-size: 50px;
 	background-position: -25px 50%;
 	pointer-events: none;
@@ -303,11 +275,7 @@ html:not(.w-editor) [clip-shape='modal'] {
 	left: 0;
 	right: 0;
 	height: 100px;
-	background: radial-gradient(
-		circle,
-		var(--secondary--green) 55%,
-		transparent 45%
-	);
+	background: radial-gradient(circle, var(--secondary--green) 55%, transparent 45%);
 	background-size: 50px;
 	background-position: -25px 50%;
 	pointer-events: none;
@@ -321,11 +289,7 @@ html:not(.w-editor) [clip-shape='modal'] {
 	left: 0;
 	right: 0;
 	height: 100px;
-	background: radial-gradient(
-		circle,
-		var(--secondary--blue) 55%,
-		transparent 45%
-	);
+	background: radial-gradient(circle, var(--secondary--blue) 55%, transparent 45%);
 	background-size: 50px;
 	background-position: -25px 50%;
 	pointer-events: none;
@@ -339,11 +303,7 @@ html:not(.w-editor) [clip-shape='modal'] {
 	left: 0;
 	right: 0;
 	height: 100px;
-	background: radial-gradient(
-		circle,
-		var(--secondary--cream) 55%,
-		transparent 45%
-	);
+	background: radial-gradient(circle, var(--secondary--cream) 55%, transparent 45%);
 	background-size: 50px;
 	background-position: -25px 50%;
 	pointer-events: none;
@@ -357,22 +317,23 @@ html:not(.w-editor) [clip-shape='modal'] {
 	left: 0;
 	right: 0;
 	height: 100px;
-	background: radial-gradient(
-		circle,
-		var(--primary--orange) 55%,
-		transparent 45%
-	);
+	background: radial-gradient(circle, var(--primary--orange) 55%, transparent 45%);
 	background-size: 50px;
 	background-position: -25px 50%;
 	pointer-events: none;
 }
 
 .my-delhi-bg {
-	background-image: url('https://uploads-ssl.webflow.com/6549128db41d15ae06784cbc/65ba22c38601d5eadb407f53_my-delhi-logo-yellow.svg'),
+	background-image:
+		url('https://uploads-ssl.webflow.com/6549128db41d15ae06784cbc/65ba22c38601d5eadb407f53_my-delhi-logo-yellow.svg'),
 		url('https://uploads-ssl.webflow.com/6549128db41d15ae06784cbc/65ba22c38601d5eadb407f53_my-delhi-logo-yellow.svg');
 	background-repeat: repeat, repeat;
-	background-size: 200px 160px, 200px 160px;
-	background-position: -100px -80px, 0px 0px;
+	background-size:
+		200px 160px,
+		200px 160px;
+	background-position:
+		-100px -80px,
+		0px 0px;
 }
 
 .cart__container {
@@ -386,11 +347,7 @@ html:not(.w-editor) [clip-shape='modal'] {
 	left: -50px;
 	bottom: 0px;
 	width: 100px;
-	background: radial-gradient(
-		circle,
-		var(--primary--orange) 55%,
-		transparent 45%
-	);
+	background: radial-gradient(circle, var(--primary--orange) 55%, transparent 45%);
 	background-size: 100px 50px;
 	background-position: 0% 25px;
 	background-repeat: repeat-y;

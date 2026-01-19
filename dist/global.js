@@ -7,7 +7,7 @@ var Animate = class {
 		if (!this.isRunning) return;
 		let i = false;
 		if (this.lerp)
-			(this.value =
+			((this.value =
 				((s = this.value),
 				(o = this.to),
 				(n = 60 * this.lerp),
@@ -15,7 +15,7 @@ var Animate = class {
 				(function (t2, e3, i2) {
 					return (1 - i2) * t2 + i2 * e3;
 				})(s, o, 1 - Math.exp(-n * r)))),
-				Math.round(this.value) === this.to && ((this.value = this.to), (i = true));
+				Math.round(this.value) === this.to && ((this.value = this.to), (i = true)));
 		else {
 			this.currentTime += e2;
 			const s2 = t(0, this.currentTime / this.duration, 1);
@@ -24,7 +24,7 @@ var Animate = class {
 			this.value = this.from + (this.to - this.from) * o2;
 		}
 		var s, o, n, r;
-		this.onUpdate?.(this.value, i), i && this.stop();
+		(this.onUpdate?.(this.value, i), i && this.stop());
 	}
 	stop() {
 		this.isRunning = false;
@@ -34,7 +34,7 @@ var Animate = class {
 		e2,
 		{ lerp: i = 0.1, duration: s = 1, easing: o = (t3) => t3, onStart: n, onUpdate: r }
 	) {
-		(this.from = this.value = t2),
+		((this.from = this.value = t2),
 			(this.to = e2),
 			(this.lerp = i),
 			(this.duration = s),
@@ -42,12 +42,12 @@ var Animate = class {
 			(this.currentTime = 0),
 			(this.isRunning = true),
 			n?.(),
-			(this.onUpdate = r);
+			(this.onUpdate = r));
 	}
 };
 var Dimensions = class {
 	constructor({ wrapper: t2, content: e2, autoResize: i = true, debounce: s = 250 } = {}) {
-		(this.wrapper = t2),
+		((this.wrapper = t2),
 			(this.content = e2),
 			i &&
 				((this.debouncedResize = /* @__PURE__ */ (function (t3, e3) {
@@ -55,27 +55,27 @@ var Dimensions = class {
 					return function () {
 						let s2 = arguments,
 							o = this;
-						clearTimeout(i2),
+						(clearTimeout(i2),
 							(i2 = setTimeout(function () {
 								t3.apply(o, s2);
-							}, e3));
+							}, e3)));
 					};
 				})(this.resize, s)),
 				this.wrapper === window
 					? window.addEventListener('resize', this.debouncedResize, false)
 					: ((this.wrapperResizeObserver = new ResizeObserver(this.debouncedResize)),
-					  this.wrapperResizeObserver.observe(this.wrapper)),
+						this.wrapperResizeObserver.observe(this.wrapper)),
 				(this.contentResizeObserver = new ResizeObserver(this.debouncedResize)),
 				this.contentResizeObserver.observe(this.content)),
-			this.resize();
+			this.resize());
 	}
 	destroy() {
-		this.wrapperResizeObserver?.disconnect(),
+		(this.wrapperResizeObserver?.disconnect(),
 			this.contentResizeObserver?.disconnect(),
-			window.removeEventListener('resize', this.debouncedResize, false);
+			window.removeEventListener('resize', this.debouncedResize, false));
 	}
 	resize = () => {
-		this.onWrapperResize(), this.onContentResize();
+		(this.onWrapperResize(), this.onContentResize());
 	};
 	onWrapperResize = () => {
 		this.wrapper === window
@@ -85,9 +85,9 @@ var Dimensions = class {
 	onContentResize = () => {
 		this.wrapper === window
 			? ((this.scrollHeight = this.content.scrollHeight),
-			  (this.scrollWidth = this.content.scrollWidth))
+				(this.scrollWidth = this.content.scrollWidth))
 			: ((this.scrollHeight = this.wrapper.scrollHeight),
-			  (this.scrollWidth = this.wrapper.scrollWidth));
+				(this.scrollWidth = this.wrapper.scrollWidth));
 	};
 	get limit() {
 		return { x: this.scrollWidth - this.width, y: this.scrollHeight - this.height };
@@ -119,7 +119,7 @@ var Emitter = class {
 var e = 100 / 6;
 var VirtualScroll = class {
 	constructor(t2, { wheelMultiplier: e2 = 1, touchMultiplier: i = 1 }) {
-		(this.element = t2),
+		((this.element = t2),
 			(this.wheelMultiplier = e2),
 			(this.touchMultiplier = i),
 			(this.touchStart = { x: null, y: null }),
@@ -129,34 +129,34 @@ var VirtualScroll = class {
 			this.element.addEventListener('wheel', this.onWheel, { passive: false }),
 			this.element.addEventListener('touchstart', this.onTouchStart, { passive: false }),
 			this.element.addEventListener('touchmove', this.onTouchMove, { passive: false }),
-			this.element.addEventListener('touchend', this.onTouchEnd, { passive: false });
+			this.element.addEventListener('touchend', this.onTouchEnd, { passive: false }));
 	}
 	on(t2, e2) {
 		return this.emitter.on(t2, e2);
 	}
 	destroy() {
-		this.emitter.destroy(),
+		(this.emitter.destroy(),
 			window.removeEventListener('resize', this.onWindowResize, false),
 			this.element.removeEventListener('wheel', this.onWheel, { passive: false }),
 			this.element.removeEventListener('touchstart', this.onTouchStart, { passive: false }),
 			this.element.removeEventListener('touchmove', this.onTouchMove, { passive: false }),
-			this.element.removeEventListener('touchend', this.onTouchEnd, { passive: false });
+			this.element.removeEventListener('touchend', this.onTouchEnd, { passive: false }));
 	}
 	onTouchStart = (t2) => {
 		const { clientX: e2, clientY: i } = t2.targetTouches ? t2.targetTouches[0] : t2;
-		(this.touchStart.x = e2),
+		((this.touchStart.x = e2),
 			(this.touchStart.y = i),
 			(this.lastDelta = { x: 0, y: 0 }),
-			this.emitter.emit('scroll', { deltaX: 0, deltaY: 0, event: t2 });
+			this.emitter.emit('scroll', { deltaX: 0, deltaY: 0, event: t2 }));
 	};
 	onTouchMove = (t2) => {
 		const { clientX: e2, clientY: i } = t2.targetTouches ? t2.targetTouches[0] : t2,
 			s = -(e2 - this.touchStart.x) * this.touchMultiplier,
 			o = -(i - this.touchStart.y) * this.touchMultiplier;
-		(this.touchStart.x = e2),
+		((this.touchStart.x = e2),
 			(this.touchStart.y = i),
 			(this.lastDelta = { x: s, y: o }),
-			this.emitter.emit('scroll', { deltaX: s, deltaY: o, event: t2 });
+			this.emitter.emit('scroll', { deltaX: s, deltaY: o, event: t2 }));
 	};
 	onTouchEnd = (t2) => {
 		this.emitter.emit('scroll', {
@@ -167,14 +167,14 @@ var VirtualScroll = class {
 	};
 	onWheel = (t2) => {
 		let { deltaX: i, deltaY: s, deltaMode: o } = t2;
-		(i *= 1 === o ? e : 2 === o ? this.windowWidth : 1),
+		((i *= 1 === o ? e : 2 === o ? this.windowWidth : 1),
 			(s *= 1 === o ? e : 2 === o ? this.windowHeight : 1),
 			(i *= this.wheelMultiplier),
 			(s *= this.wheelMultiplier),
-			this.emitter.emit('scroll', { deltaX: i, deltaY: s, event: t2 });
+			this.emitter.emit('scroll', { deltaX: i, deltaY: s, event: t2 }));
 	};
 	onWindowResize = () => {
-		(this.windowWidth = window.innerWidth), (this.windowHeight = window.innerHeight);
+		((this.windowWidth = window.innerWidth), (this.windowHeight = window.innerHeight));
 	};
 };
 var Lenis = class {
@@ -198,7 +198,7 @@ var Lenis = class {
 		autoResize: g = true,
 		__experimental__naiveDimensions: S = false
 	} = {}) {
-		(this.__isSmooth = false),
+		((this.__isSmooth = false),
 			(this.__isScrolling = false),
 			(this.__isStopped = false),
 			(this.__isLocked = false),
@@ -252,7 +252,7 @@ var Lenis = class {
 						(this.options.syncTouch && s2) || (this.options.smoothWheel && o2)),
 					!this.isSmooth)
 				)
-					return (this.isScrolling = false), void this.animate.stop();
+					return ((this.isScrolling = false), void this.animate.stop());
 				i2.preventDefault();
 				let h2 = e3;
 				'both' === this.options.gestureOrientation
@@ -260,7 +260,7 @@ var Lenis = class {
 					: 'horizontal' === this.options.gestureOrientation && (h2 = t3);
 				const a2 = s2 && this.options.syncTouch,
 					c2 = s2 && 'touchend' === i2.type && Math.abs(h2) > 5;
-				c2 && (h2 = this.velocity * this.options.touchInertiaMultiplier),
+				(c2 && (h2 = this.velocity * this.options.touchInertiaMultiplier),
 					this.scrollTo(
 						this.targetScroll + h2,
 						Object.assign(
@@ -271,17 +271,17 @@ var Lenis = class {
 										lerp: this.options.lerp,
 										duration: this.options.duration,
 										easing: this.options.easing
-								  }
+									}
 						)
-					);
+					));
 			}),
 			(this.onNativeScroll = () => {
 				if (!this.__preventNextScrollEvent && !this.isScrolling) {
 					const t3 = this.animatedScroll;
-					(this.animatedScroll = this.targetScroll = this.actualScroll),
+					((this.animatedScroll = this.targetScroll = this.actualScroll),
 						(this.velocity = 0),
 						(this.direction = Math.sign(this.animatedScroll - t3)),
-						this.emit();
+						this.emit());
 				}
 			}),
 			(window.lenisVersion = '1.0.42'),
@@ -318,10 +318,10 @@ var Lenis = class {
 			(this.targetScroll = this.animatedScroll = this.actualScroll),
 			this.options.wrapper.addEventListener('scroll', this.onNativeScroll, false),
 			(this.virtualScroll = new VirtualScroll(s, { touchMultiplier: m, wheelMultiplier: v })),
-			this.virtualScroll.on('scroll', this.onVirtualScroll);
+			this.virtualScroll.on('scroll', this.onVirtualScroll));
 	}
 	destroy() {
-		this.emitter.destroy(),
+		(this.emitter.destroy(),
 			this.options.wrapper.removeEventListener('scroll', this.onNativeScroll, false),
 			this.virtualScroll.destroy(),
 			this.dimensions.destroy(),
@@ -329,7 +329,7 @@ var Lenis = class {
 			this.toggleClassName('lenis-smooth', false),
 			this.toggleClassName('lenis-scrolling', false),
 			this.toggleClassName('lenis-stopped', false),
-			this.toggleClassName('lenis-locked', false);
+			this.toggleClassName('lenis-locked', false));
 	}
 	on(t2, e2) {
 		return this.emitter.on(t2, e2);
@@ -347,11 +347,11 @@ var Lenis = class {
 		this.emitter.emit('scroll', this);
 	}
 	reset() {
-		(this.isLocked = false),
+		((this.isLocked = false),
 			(this.isScrolling = false),
 			(this.animatedScroll = this.targetScroll = this.actualScroll),
 			(this.velocity = 0),
-			this.animate.stop();
+			this.animate.stop());
 	}
 	start() {
 		this.isStopped && ((this.isStopped = false), this.reset());
@@ -361,7 +361,7 @@ var Lenis = class {
 	}
 	raf(t2) {
 		const e2 = t2 - (this.time || t2);
-		(this.time = t2), this.animate.advance(1e-3 * e2);
+		((this.time = t2), this.animate.advance(1e-3 * e2));
 	}
 	scrollTo(
 		e2,
@@ -420,10 +420,10 @@ var Lenis = class {
 					easing: r,
 					lerp: l,
 					onStart: () => {
-						o && (this.isLocked = true), (this.isScrolling = true);
+						(o && (this.isLocked = true), (this.isScrolling = true));
 					},
 					onUpdate: (t2, e3) => {
-						(this.isScrolling = true),
+						((this.isScrolling = true),
 							(this.velocity = t2 - this.animatedScroll),
 							(this.direction = Math.sign(this.velocity)),
 							(this.animatedScroll = t2),
@@ -437,7 +437,7 @@ var Lenis = class {
 								(this.__preventNextScrollEvent = true),
 								requestAnimationFrame(() => {
 									delete this.__preventNextScrollEvent;
-								}));
+								})));
 					}
 				});
 			}
@@ -507,7 +507,7 @@ var Lenis = class {
 		);
 	}
 	toggleClassName(t2, e2) {
-		this.rootElement.classList.toggle(t2, e2), this.emitter.emit('className change', this);
+		(this.rootElement.classList.toggle(t2, e2), this.emitter.emit('className change', this));
 	}
 };
 
@@ -1527,9 +1527,8 @@ function updateSlides() {
 		wrapperEl.style.width = `${swiper.virtualSize + spaceBetween}px`;
 	}
 	if (params.setWrapperSize) {
-		wrapperEl.style[swiper.getDirectionLabel('width')] = `${
-			swiper.virtualSize + spaceBetween
-		}px`;
+		wrapperEl.style[swiper.getDirectionLabel('width')] =
+			`${swiper.virtualSize + spaceBetween}px`;
 	}
 	if (gridEnabled) {
 		swiper.grid.updateWrapperSize(slideSize, snapGrid);
@@ -2597,8 +2596,8 @@ function slideToLoop(index, speed, runCallbacks, internal) {
 						? 'prev'
 						: 'next'
 					: targetSlideIndex - swiper.activeIndex - 1 < swiper.params.slidesPerView
-					? 'next'
-					: 'prev';
+						? 'next'
+						: 'prev';
 				swiper.loopFix({
 					direction,
 					slideTo: true,
@@ -3551,13 +3550,13 @@ function onTouchMove(event2) {
 			data.currentTranslate >
 				(params.centeredSlides
 					? swiper.minTranslate() -
-					  swiper.slidesSizesGrid[swiper.activeIndex + 1] -
-					  (params.slidesPerView !== 'auto' &&
-					  swiper.slides.length - params.slidesPerView >= 2
+						swiper.slidesSizesGrid[swiper.activeIndex + 1] -
+						(params.slidesPerView !== 'auto' &&
+						swiper.slides.length - params.slidesPerView >= 2
 							? swiper.slidesSizesGrid[swiper.activeIndex + 1] +
-							  swiper.params.spaceBetween
+								swiper.params.spaceBetween
 							: 0) -
-					  swiper.params.spaceBetween
+						swiper.params.spaceBetween
 					: swiper.minTranslate())
 		) {
 			swiper.loopFix({
@@ -3584,12 +3583,12 @@ function onTouchMove(event2) {
 			data.currentTranslate <
 				(params.centeredSlides
 					? swiper.maxTranslate() +
-					  swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] +
-					  swiper.params.spaceBetween +
-					  (params.slidesPerView !== 'auto' &&
-					  swiper.slides.length - params.slidesPerView >= 2
+						swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] +
+						swiper.params.spaceBetween +
+						(params.slidesPerView !== 'auto' &&
+						swiper.slides.length - params.slidesPerView >= 2
 							? swiper.slidesSizesGrid[swiper.slidesSizesGrid.length - 1] +
-							  swiper.params.spaceBetween
+								swiper.params.spaceBetween
 							: 0)
 					: swiper.maxTranslate())
 		) {
@@ -5416,9 +5415,8 @@ function Pagination(_ref) {
 					true
 				);
 				el.forEach((subEl) => {
-					subEl.style[swiper.isHorizontal() ? 'width' : 'height'] = `${
-						bulletSize * (params.dynamicMainBullets + 4)
-					}px`;
+					subEl.style[swiper.isHorizontal() ? 'width' : 'height'] =
+						`${bulletSize * (params.dynamicMainBullets + 4)}px`;
 				});
 				if (params.dynamicMainBullets > 1 && previousIndex !== void 0) {
 					dynamicBulletIndex += current - (previousIndex || 0);
@@ -5554,8 +5552,8 @@ function Pagination(_ref) {
 			swiper.virtual && swiper.params.virtual.enabled
 				? swiper.virtual.slides.length
 				: swiper.grid && swiper.params.grid.rows > 1
-				? swiper.slides.length / Math.ceil(swiper.params.grid.rows)
-				: swiper.slides.length;
+					? swiper.slides.length / Math.ceil(swiper.params.grid.rows)
+					: swiper.slides.length;
 		let el = swiper.pagination.el;
 		el = makeElementsArray(el);
 		let paginationHTML = '';
@@ -5574,9 +5572,7 @@ function Pagination(_ref) {
 				if (params.renderBullet) {
 					paginationHTML += params.renderBullet.call(swiper, i, params.bulletClass);
 				} else {
-					paginationHTML += `<${params.bulletElement} ${
-						swiper.isElement ? 'part="bullet"' : ''
-					} class="${params.bulletClass}"></${params.bulletElement}>`;
+					paginationHTML += `<${params.bulletElement} ${swiper.isElement ? 'part="bullet"' : ''} class="${params.bulletClass}"></${params.bulletElement}>`;
 				}
 			}
 		}
