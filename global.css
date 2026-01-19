@@ -73,6 +73,10 @@ body {
 	.section {
 		padding: var(--page-padding--main) 0;
 	}
+
+	[itemtype='https://schema.org/Menu'] figure {
+		display: none;
+	}
 }
 
 p {
