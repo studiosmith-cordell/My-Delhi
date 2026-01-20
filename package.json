@@ -15,9 +15,8 @@
   "dependencies": {
     "@finsweet/attributes-cmsfilter": "^1.16.2",
     "@splinetool/runtime": "^1.0.33",
-    "@studio-freight/lenis": "^1.0.33",
     "gsap": "^3.12.5",
-    "split-type": "^0.3.4",
+    "lenis": "^1.3.17",
     "swiper": "^11.0.5"
   },
   "devDependencies": {

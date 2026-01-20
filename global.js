@@ -1,4 +1,4 @@
-import Lenis from '@studio-freight/lenis';
+import Lenis from 'lenis';
 import Swiper from 'swiper';
 import 'swiper/css';
 import { Navigation, Pagination } from 'swiper/modules';
