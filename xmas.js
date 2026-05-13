@@ -1,16 +1,18 @@
 const NUMBER_OF_SNOWFLAKES = 300,
 	MAX_SNOWFLAKE_SIZE = 5,
 	MAX_SNOWFLAKE_SPEED = 2,
-	SNOWFLAKE_COLOUR = '#fff',
+	SNOWFLAKE_COLOUR = '#fbf5ee',
 	snowflakes = [];
 
+const target = document.getElementsByClassName('fig--post')[0];
+
 const canvas = document.createElement('canvas');
-canvas.style.position = 'fixed';
+canvas.style.position = 'absolute';
 canvas.style.top = '0px';
 canvas.style.pointerEvents = 'none';
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-document.body.appendChild(canvas);
+canvas.width = target.offsetWidth;
+canvas.height = target.offsetHeight;
+target.appendChild(canvas);
 
 const ctx = canvas.getContext('2d');
 
