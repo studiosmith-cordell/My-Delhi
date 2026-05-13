@@ -79,6 +79,14 @@ body {
 	}
 }
 
+h1,
+.h1,
+h2,
+.h2 {
+	text-box-trim: trim-both;
+	text-box-edge: cap alphabetic;
+}
+
 p {
 	text-wrap: pretty;
 }
@@ -384,7 +392,7 @@ html.lenis {
 }
 
 .word-mask {
-	padding-block-start: 0.2em;
+	padding-block-start: 0.3em !important;
 	margin-block: -0.2em;
 	vertical-align: top;
 }
