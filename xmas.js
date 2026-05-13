@@ -58,8 +58,8 @@ for (let i = 0; i < NUMBER_OF_SNOWFLAKES; i++) {
 }
 
 window.addEventListener('resize', () => {
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+	canvas.width = target.offsetWidth;
+	canvas.height = target.offsetHeight;
 });
 
 animate();
