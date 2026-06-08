@@ -1,5 +1,5 @@
-const NUMBER_OF_SNOWFLAKES = window.innerWidth > 640 ? 150 : 50,
-	MAX_SNOWFLAKE_SIZE = window.innerWidth > 640 ? 5 : 2,
+const NUMBER_OF_SNOWFLAKES = window.innerWidth > 640 ? 150 : 40,
+	MAX_SNOWFLAKE_SIZE = window.innerWidth > 640 ? 5 : 1,
 	MAX_SNOWFLAKE_SPEED = 1,
 	SNOWFLAKE_COLOUR = '#fbf5ee',
 	snowflakes = [];
