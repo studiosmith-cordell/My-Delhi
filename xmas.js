@@ -1,5 +1,5 @@
-const NUMBER_OF_SNOWFLAKES = window.innerWidth > 640 ? 150 : 75,
-	MAX_SNOWFLAKE_SIZE = window.innerWidth > 640 ? 5 : 3,
+const NUMBER_OF_SNOWFLAKES = window.innerWidth > 640 ? 150 : 50,
+	MAX_SNOWFLAKE_SIZE = window.innerWidth > 640 ? 5 : 2,
 	MAX_SNOWFLAKE_SPEED = 1,
 	SNOWFLAKE_COLOUR = '#fbf5ee',
 	snowflakes = [];
@@ -18,7 +18,7 @@ const ctx = canvas.getContext('2d');
 
 const createSnowflake = () => ({
 	x: Math.random() * canvas.width,
-	y: Math.random() * (canvas.height),
+	y: Math.random() * canvas.height,
 	radius: Math.floor(Math.random() * MAX_SNOWFLAKE_SIZE + 1),
 	colour: SNOWFLAKE_COLOUR,
 	speed: Math.random() * MAX_SNOWFLAKE_SPEED + 1,
